@@ -20,3 +20,5 @@ Basil Roy
 
 Igor Bendik
 
+## To run on your own machine, make sure you run 'npm install' in the directory for the project
+
