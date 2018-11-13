@@ -13,7 +13,7 @@ class Login extends Component {
   }
 
   handleChange = (e) => {
-
+    e.preventDefault();
     let change = {};
     change[e.target.name] = e.target.value;
     this.setState(change);
@@ -34,7 +34,7 @@ class Login extends Component {
       return;
     }
 
-    fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+    fire.auth().createUserWithEmailAndPassword(newEmail, newPassword)
     .catch((error) => {
       // Handle Errors here.
       var errorCode = error.code;
@@ -50,9 +50,10 @@ class Login extends Component {
     });
   }
 
-  handleEmailLogIn = () => {
+  handleEmailLogIn = (e) => {
+    e.preventDefault();
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
     .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -68,7 +69,8 @@ class Login extends Component {
     
   }
 
-  handleLogOut = () => {
+  handleLogOut = (e) => {
+    e.preventDefault();
     fire.auth().signOut();
   }
   
