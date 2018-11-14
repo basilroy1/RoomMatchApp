@@ -4,7 +4,7 @@ import React, { Component } from 'react'
   render() {
     return (
       <div>
-        This is the user section
+         user section
       </div>
     )
   }
