@@ -4,7 +4,6 @@ import React, { Component } from 'react';
   render() {
     return (
       <div>
-<<<<<<< HEAD
          <form id="info">
 					<label>Name</label>
 						<input type="text" placeholder="Enter Name" name="name" id="name"/>
@@ -33,9 +32,6 @@ import React, { Component } from 'react';
 						<button type="submit" >Submit</button>
 						
 					</form>
-=======
-        This is the user section on developer branch
->>>>>>> 001e7dadc5e17f0c6a9ce7a1931cfe8ef294072e
       </div>
     )
   }

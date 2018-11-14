@@ -17,37 +17,7 @@ class Login extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-<<<<<<< HEAD
-    const newEmail = this.state.email;
-    const newPassword = this.state.password;
-    // check if user entered a mumail or mu.ie email
-    const validEmail = (newEmail.endsWith("@mumail.ie") || newEmail.endsWith("@mu.ie")); 
-
-    if(!validEmail){
-      alert("Please enter a valid maynooth email address");
-      return;
-    }
-
-    fire.auth().createUserWithEmailAndPassword(newEmail, newPassword)
-    .catch((error) => {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      
-      if (errorCode === 'auth/weak-password') {
-        alert('The password is too weak.');
-      } else {
-        alert(errorMessage);
-      }
-      console.log(error);
-    
-    });
-  }
-
-  handleEmailLogIn = (e) => {
-=======
   login(e) {
->>>>>>> 001e7dadc5e17f0c6a9ce7a1931cfe8ef294072e
     e.preventDefault();
     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
     }).catch((error) => {
