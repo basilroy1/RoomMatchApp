@@ -40,7 +40,7 @@ class Login extends Component {
       var errorCode = error.code;
       var errorMessage = error.message;
       
-      if (errorCode == 'auth/weak-password') {
+      if (errorCode === 'auth/weak-password') {
         alert('The password is too weak.');
       } else {
         alert(errorMessage);
