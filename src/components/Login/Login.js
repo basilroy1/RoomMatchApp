@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import fire from '../../config/fire';
-import Bootstrap from 'bootstrap';
 
 class Login extends Component {
   constructor(props) {
@@ -52,11 +51,13 @@ class Login extends Component {
   render() {
     return (
       <div className="container">
+
+        <h3>Sign Up or Login to use the site</h3>
+
         <form>
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Email address</label>
             <input  value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Password</label>
