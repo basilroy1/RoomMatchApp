@@ -4,43 +4,76 @@ import fire from '../../config/fire';
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.login = this.login.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.signup = this.signup.bind(this);
+    // this.login = this.login.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+    // this.signup = this.signup.bind(this);
     // this.togglePersistance = this.togglePersistance.bind(this);
     this.state = {
       email: '',
       password: '',
-      persistantSession : ""
+      clicked: ''
+    
     };
   }
 
 
+  handleChange = (e) => {
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
 
-  handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({
+      [name]: value
+    });
   }
 
-  login(e) {
+
+  login = (e) => {
     e.preventDefault();
     
-    const userWantsToBeRemembered = this.state.persistantSession; 
-    if(!userWantsToBeRemembered){ // if the user didn't click the 'remember me' checkbox
-      fire.auth().setPersistence("none");  // don't allow persistant log in
-    }
-
+    this.handleRememberMe();
 
     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-      console.log("Log in ");
+      console.log("Log in");
     }).catch((error) => {
         
-      alert(error.message);
+      alert("Please enter a valid email or password");
+      
 
       console.log(error.message);
     });
   }
 
-  signup(e){
+  handleRememberMe = () => {
+    const checkBoxClicked = this.state.clicked;
+
+    if (!checkBoxClicked) {
+      fire.auth().setPersistence("none");
+    }
+
+  }
+
+  sendPasswordResetEmail = (e) => {
+    const auth = fire.auth();
+    const email = this.state.email;
+    const validEmail = (email.endsWith("@mumail.ie") || email.endsWith("@mu.ie"));
+
+    if(!validEmail) {
+      alert("Please enter a valid email");
+      return;
+    }
+      
+
+    auth.sendPasswordResetEmail(email)
+    .then(
+      alert("An email has been sent to you to reset your password")
+    )
+
+  }
+
+
+
+  signup = (e) => {
     e.preventDefault();
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
     }).then((u)=>{console.log(u)})
@@ -62,10 +95,11 @@ class Login extends Component {
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Password</label>
             <input  value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+            <button onClick={this.sendPasswordResetEmail}>Reset password</button>
           </div>
           <button type="submit" onClick={this.login}>Login</button>
           <button onClick={this.signup} >Signup</button> <br />
-          <input type="checkbox" name="persistantSession" onClick={this.handleChange}/>Remember me<br />
+          <input type="checkbox" name="clicked" onClick={this.handleChange}/>Remember me<br />
         </form>
       
       </div>
