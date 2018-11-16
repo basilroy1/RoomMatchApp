@@ -121,15 +121,15 @@ class Login extends Component {
           <div className="form-group">
             <label htmlFor="passwordInput">Password</label>
             <input  value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" placeholder="Enter your Password" />
-            <Button onClick={this.sendPasswordResetEmail}>Forgot your password?</Button>
+           <Button onClick={this.sendPasswordResetEmail}>Forgot your password?</Button>
           </div>
 
-          <ButtonGroup>
+            <ButtonGroup> 
             <Button onClick={this.login}>Login</Button>
             <Button onClick={this.signup} >Signup</Button> <br />
             <input type="checkbox" name="clicked" onClick={this.handleChange}/>Remember me<br />
           </ButtonGroup>
-           
+         
         </form>
       
       </div>
