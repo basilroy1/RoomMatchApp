@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import fire from '../../config/fire';
+import { Button, ButtonGroup } from 'react-bootstrap';
 
 class Login extends Component {
   constructor(props) {
     super(props);
-    // this.login = this.login.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
-    // this.signup = this.signup.bind(this);
-    // this.togglePersistance = this.togglePersistance.bind(this);
+
     this.state = {
       email: '',
       password: '',
-      clicked: ''
+      clicked: '',
     
     };
   }
 
-
+  // Sets the state to the corresponding input
   handleChange = (e) => {
     const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -27,39 +25,49 @@ class Login extends Component {
     });
   }
 
-
+  // Start of login functionality
   login = (e) => {
     e.preventDefault();
     
-    this.handleRememberMe();
+    this.handleRememberMe(); // Function to toggle persistant login
 
+    // Built in firebase sign in functionality
     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
       console.log("Log in");
     }).catch((error) => {
         
       alert("Please enter a valid email or password");
-      
-
       console.log(error.message);
+
     });
   }
+  // End of login functionality
 
+  
+  // Start of 'remember me' functionality
   handleRememberMe = () => {
-    const checkBoxClicked = this.state.clicked;
+    // Checking the state of the 'remember me' checkbox
+    const checkBoxClicked = this.state.clicked; 
 
+    // If the user has not checked the 'remember me' checkbox
     if (!checkBoxClicked) {
-      fire.auth().setPersistence("none");
+      fire.auth().setPersistence("none"); // Prevent persistant log in session
     }
 
   }
+  // End of 'remember me' functionality
 
+  // Start of password reset functionality
   sendPasswordResetEmail = (e) => {
+
+    e.preventDefault();
+
     const auth = fire.auth();
     const email = this.state.email;
     const validEmail = (email.endsWith("@mumail.ie") || email.endsWith("@mu.ie"));
 
     if(!validEmail) {
-      alert("Please enter a valid email");
+      alert("Please enter a valid Maynooth email");
       return;
     }
       
@@ -70,36 +78,58 @@ class Login extends Component {
     )
 
   }
+  // End of password reset functionality
 
-
-
+  
+  // Start of sign up functionality
   signup = (e) => {
     e.preventDefault();
+
+    const validEmail = ((this.state.email).endsWith("@mumail.ie")||(this.state.email).endsWith("@mu.ie"));
+
+    if(!validEmail){
+      alert("Please enter a valid Maynooth email address");
+      return;
+    }
+
+    
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-    }).then((u)=>{console.log(u)})
+    })
+    .then((u) => {
+      console.log(u);
+    })
     .catch((error) => {
         console.log(error);
       })
   }
+  // End of sign up functionality
+
   render() {
+
     return (
       <div className="container">
 
         <h3>Sign Up or Login to use the site</h3>
 
         <form>
+
           <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Email address</label>
-            <input  value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+            <label htmlFor="emailInput">Email address</label>
+            <input  value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" placeholder="Enter your Email" />
           </div>
+
           <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Password</label>
-            <input  value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-            <button onClick={this.sendPasswordResetEmail}>Reset password</button>
+            <label htmlFor="passwordInput">Password</label>
+            <input  value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" placeholder="Enter your Password" />
+            <Button onClick={this.sendPasswordResetEmail}>Forgot your password?</Button>
           </div>
-          <button type="submit" onClick={this.login}>Login</button>
-          <button onClick={this.signup} >Signup</button> <br />
-          <input type="checkbox" name="clicked" onClick={this.handleChange}/>Remember me<br />
+
+          <ButtonGroup>
+            <Button onClick={this.login}>Login</Button>
+            <Button onClick={this.signup} >Signup</Button> <br />
+            <input type="checkbox" name="clicked" onClick={this.handleChange}/>Remember me<br />
+          </ButtonGroup>
+           
         </form>
       
       </div>
