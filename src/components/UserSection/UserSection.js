@@ -53,7 +53,7 @@ import React, { Component } from 'react';
 					<label>Intrests</label>
 						<input onChange={this.handleChange}type="text" placeholder="Enter Intrests" name="intrests" id="intrests"/>
 						<br></br>   
-                       <br></br>
+            <br></br>
 						<button style={{marginLeft:100}} type="submit" >Submit</button>
 					</form>
 
