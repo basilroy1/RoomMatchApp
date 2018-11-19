@@ -26,6 +26,9 @@ class PasswordResetModal extends Component {
     fire.auth().sendPasswordResetEmail(this.state.email)
     .then( () => {
       alert("We have sent you an email with instructions to reset your password!");
+      this.setState({
+        
+      })
     })
   }
 
