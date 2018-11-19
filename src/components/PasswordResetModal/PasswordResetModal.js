@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup,FormControl, ControlLabel, Button } from 'react-bootstrap';
+import { FormGroup,FormControl, Button } from 'react-bootstrap';
 import fire from '../../config/fire';
 
 
@@ -52,7 +52,6 @@ class PasswordResetModal extends Component {
           controlId="formBasicText"
           validationState={this.getValidationState()}
         >
-        <ControlLabel>Working example with validation</ControlLabel>
 
         <FormControl
             type="text"
