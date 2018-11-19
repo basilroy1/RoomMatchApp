@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import fire from '../../config/fire';
 import UserSection from '../UserSection/UserSection';
+import { Button } from 'react-bootstrap';
 
 class Home extends Component {
 
@@ -20,7 +21,7 @@ class Home extends Component {
         <h1>This is the homepage</h1>
         <UserSection />
 
-        <button onClick = {this.logout}>Log Out</button>
+        <Button onClick={this.logout} color="primary">Logout</Button>{' '}
       </div>
     )
   }

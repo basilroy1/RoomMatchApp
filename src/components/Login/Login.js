@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PasswordResetModal from '../PasswordResetModal/PasswordResetModal';
 import fire from '../../config/fire';
 import { Button, ButtonGroup } from 'react-bootstrap';
 
@@ -10,6 +11,7 @@ class Login extends Component {
       email: '',
       password: '',
       clicked: '',
+      viewPasswordResetModal: false
     
     };
   }
@@ -104,6 +106,13 @@ class Login extends Component {
   }
   // End of sign up functionality
 
+  toggleModal = (e) => {
+    e.preventDefault();
+    this.setState({
+      viewPasswordResetModal: !(this.state.viewPasswordResetModal)
+    });
+  }
+
   render() {
 
     return (
@@ -121,7 +130,8 @@ class Login extends Component {
           <div className="form-group">
             <label htmlFor="passwordInput">Password</label>
             <input  value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" placeholder="Enter your Password" />
-            <Button onClick={this.sendPasswordResetEmail}>Forgot your password?</Button>
+            <Button onClick={this.toggleModal}>Forgot your password?</Button>
+            {this.state.viewPasswordResetModal ? <PasswordResetModal/> : null}
           </div>
 
           <ButtonGroup>
