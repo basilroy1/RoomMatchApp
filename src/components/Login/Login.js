@@ -124,7 +124,7 @@ class Login extends Component {
 
           <div className="form-group">
             <label htmlFor="emailInput">Email address</label>
-            <input  value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" placeholder="Enter your Email" />
+            <input  value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" placeholder="Enter your Maynooth email address" />
           </div>
 
           <div className="form-group">
