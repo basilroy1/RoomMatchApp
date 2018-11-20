@@ -21,4 +21,6 @@ Basil Roy
 Igor Bendik
 
 ## To run on your own machine, make sure you run 'npm install' in the directory for the project
+###### If you run into issues with bootstrap, run the command  ```npm install --save react-bootstrap react-dom ```
+
 

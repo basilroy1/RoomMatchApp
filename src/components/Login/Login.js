@@ -12,8 +12,14 @@ class Login extends Component {
       password: '',
       clicked: '',
       viewPasswordResetModal: false
-    
     };
+  }
+
+  handleKeyPressed = e => {
+    e.preventDefault();
+    if(e.key === "Enter"){
+      this.login();
+    }
   }
 
   // Sets the state to the corresponding input
@@ -124,20 +130,41 @@ class Login extends Component {
 
           <div className="form-group">
             <label htmlFor="emailInput">Email address</label>
-            <input  value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" placeholder="Enter your Maynooth email address" />
+            <input  
+            value={this.state.email} 
+            onChange={this.handleChange} 
+            type="email" 
+            name="email" 
+            className="form-control" 
+            placeholder="Enter your Maynooth email address" 
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="passwordInput">Password</label>
-            <input  value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" placeholder="Enter your Password" />
+            <input 
+            value={this.state.password} 
+            onChange={this.handleChange} 
+            onKeyPress={this.handleKeyPressed}
+            type="password" 
+            name="password" 
+            className="form-control" 
+            placeholder="Enter your Password" 
+            />
             <Button onClick={this.toggleModal}>Forgot your password?</Button>
-            {this.state.viewPasswordResetModal ? <PasswordResetModal/> : null}
-          </div>
+            { this.state.viewPasswordResetModal ? <PasswordResetModal/> : null }
+          </div> 
 
           <ButtonGroup>
             <Button onClick={this.login}>Login</Button>
             <Button onClick={this.signup} >Signup</Button> <br />
-            <input type="checkbox" name="clicked" onClick={this.handleChange}/>Remember me<br />
+            <input 
+            type="checkbox" 
+            name="clicked" 
+            onClick={this.handleChange}
+            />
+            Remember me
+            <br />
           </ButtonGroup>
            
         </form>
