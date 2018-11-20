@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import fire from '../../config/fire';
  class UserSection extends Component {
 
   constructor(props) {
