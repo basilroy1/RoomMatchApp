@@ -32,14 +32,15 @@ class PasswordResetModal extends Component {
   getValidationState = () => {
     const email = this.state.email;
     const validEmail = email.endsWith("@mumail.ie") || email.endsWith("@mu.ie");
+    const warningLen = email.length > 10; // triggers the 'warning' colour
 
-    if(validEmail)
-      return "success";
-    if (email.endsWith("@"))
+    if(warningLen)
       return "warning";
-    else
-      return "error";
-  }
+    if(warningLen && validEmail)
+      return "success";
+    else 
+      return "danger"
+  } 
 
 
   render() {
@@ -57,7 +58,11 @@ class PasswordResetModal extends Component {
             onChange={this.handleChange}
         />
 
-        <Button bsStyle="primary" onClick={this.sendPasswordReset}>Reset your password</Button>
+        <Button bsStyle="primary" 
+        onClick={this.sendPasswordReset}
+        >
+        Reset your password
+        </Button>
           
         </FormGroup>
       </div>
