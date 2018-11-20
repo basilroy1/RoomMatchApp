@@ -17,8 +17,8 @@ import fire from '../../config/fire';
     this.setState({ [e.target.name]: e.target.value });
   }
 
- Submit(event) {
-        event.preventDefault();
+ Submit=(e)=> {
+        e.preventDefault();
         console.log(this.state.name);
         console.log(this.state.age);
         console.log(this.state.course);
@@ -33,7 +33,7 @@ import fire from '../../config/fire';
     return (
       <div>
         {header1}
-         <form onSubmit={this.Submit.bind(this)} id="info" style={{marginLeft:200}}>
+         <form onSubmit={this.Submit} id="info" style={{marginLeft:200}}>
 					<label>Name</label>
 						<input onChange={this.handleChange} type="text" placeholder="Enter Name" name="name" id="name"/>
 						<br></br>
