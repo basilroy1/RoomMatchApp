@@ -32,13 +32,13 @@ import fire from '../../config/fire';
 
 /*need to make Functionality for user filling all the fields before submitting*/
 
-
+/*
         console.log(this.state.name);
         console.log(this.state.age);
         console.log(this.state.course);
         console.log(this.state.location);
         console.log(this.state.intrests);
-
+*/
        
 /*Retrieve data from database to the webpage */
         ref.on('value',getData,noData);
@@ -84,38 +84,42 @@ import fire from '../../config/fire';
         function noData(err){
           console.log(err);	
         }
+        document.getElementById("info").reset();//reset value after entered
 
     }
   
   render() {
-    
-    const header1 = "Enter your details";
 
     return (
-      <div>
-        {header1}
+      <div className="form-group col-md-6">
+    
          <form onSubmit={this.Submit} id="info" style={{marginLeft:200}}>
-					<label>Name</label>
-						<input onChange={this.handleChange} type="text" placeholder="Enter Name" name="name" id="name"/>
+					<label for="inputName">Name</label>
+						<input  className="form-control" onChange={this.handleChange} type="text" placeholder="Enter Name" name="name" id="name"/>
+            {this.state.name ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Name</span>}
 						<br></br>
-                        <br></br>
-					<label>Age</label>
-						<input onChange={this.handleChange} type="age" placeholder="Enter Age" name="age" id="age"/>
+                        
+					<label for="inputAge">Age</label>
+						<input className="form-control" onChange={this.handleChange} type="age" placeholder="Enter Age" name="age" id="age"/>
+            {this.state.age ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Age</span>}
 						<br></br>
-                        <br></br>
-					<label>Course</label>
-						<input onChange={this.handleChange}  type="text" placeholder="Enter Course" name="course" id="course"/>
+                       
+					<label for="inputCourse">Course</label>
+						<input className="form-control" onChange={this.handleChange}  type="text" placeholder="Enter Course" name="course" id="course"/>
+            {this.state.course ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Course</span>}
 						<br></br>
-                        <br></br>
-					<label>Location</label>
-						<input onChange={this.handleChange}  type="location" placeholder="Enter Location" name="location" id="location"/>
+                        
+					<label for="inputLocation">Location</label>
+						<input className="form-control" onChange={this.handleChange}  type="location" placeholder="Enter Location" name="location" id="location"/>
+            {this.state.location ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Location</span>}
 						<br></br>
-                        <br></br>
-					<label>Intrests</label>
-						<input onChange={this.handleChange}type="text" placeholder="Enter Intrests" name="intrests" id="intrests"/>
+                        
+					<label for="inputIntrests">Intrests</label>
+						<input className="form-control" onChange={this.handleChange}type="text" placeholder="Enter Intrests" name="intrests" id="intrests"/>
+            {this.state.intrests ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Intrests</span>}
 						<br></br>   
-            <br></br>
-						<button style={{marginLeft:100}} type="submit" >Submit</button>
+            
+						<button className="btn btn-primary" style={{marginLeft:100}} type="submit" >Submit</button>
 					</form>
           <ul className="cool">
           
