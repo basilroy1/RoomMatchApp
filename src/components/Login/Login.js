@@ -15,13 +15,6 @@ class Login extends Component {
     };
   }
 
-  handleKeyPressed = e => {
-    e.preventDefault();
-    if(e.key === "Enter"){
-      this.login();
-    }
-  }
-
   // Sets the state to the corresponding input
   handleChange = (e) => {
     const target = e.target;
@@ -145,7 +138,6 @@ class Login extends Component {
             <input 
             value={this.state.password} 
             onChange={this.handleChange} 
-           // onKeyPress={this.handleKeyPressed}
             type="password" 
             name="password" 
             className="form-control" 
