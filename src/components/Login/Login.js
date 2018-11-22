@@ -145,7 +145,7 @@ class Login extends Component {
             <input 
             value={this.state.password} 
             onChange={this.handleChange} 
-           // onKeyPress={this.handleKeyPressed}
+           //onKeyPress={this.handleKeyPressed}
             type="password" 
             name="password" 
             className="form-control" 
