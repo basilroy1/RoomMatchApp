@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PasswordResetModal from '../PasswordResetModal/PasswordResetModal';
 import fire from '../../config/fire';
 import { Button, ButtonGroup } from 'react-bootstrap';
+import './Login.css';
 
 class Login extends Component {
   constructor(props) {
@@ -13,6 +14,13 @@ class Login extends Component {
       clicked: '',
       viewPasswordResetModal: false
     };
+  }
+
+  hideEmail = e => {
+    e.preventDefault();
+    this.setState({
+      hideEmail: !(this.state.hideEmail)
+    });
   }
 
   // Sets the state to the corresponding input
@@ -37,7 +45,7 @@ class Login extends Component {
       console.log("Log in");
     }).catch((error) => {
         
-      alert("Please enter a valid email or password");
+      alert("Please enter a valid Maynooth email or password");
       console.log(error.message);
 
     });
@@ -117,6 +125,56 @@ class Login extends Component {
     return (
       <div className="container">
 
+<<<<<<< HEAD
+        <h3 className="t">Sign Up or Login to use the site</h3>
+
+        <form style ={{display: this.state.viewPasswordResetModal ?  "none" : "block"}}>
+          <div>
+ 
+            <div className="form-group" style ={{display: this.state.hideEmail ?  "none" : "block"}}>
+              <label htmlFor="emailInput">Email address</label>
+              <input  
+              value={this.state.email} 
+              onChange={this.handleChange} 
+              type="email" 
+              name="email" 
+              className="form-control" 
+              placeholder="Enter your Maynooth email address" 
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="passwordInput">Password</label>
+              <input 
+              value={this.state.password} 
+              onChange={this.handleChange} 
+              type="password" 
+              name="password" 
+              className="form-control" 
+              placeholder="Enter your Password" 
+              />
+              
+            </div> 
+
+            </div>
+
+            <ButtonGroup>
+              <Button onClick={this.login}>Login</Button>
+              <Button onClick={this.toggleModal}>Forgot your password?</Button>
+              <Button onClick={this.signup} >Signup</Button> <br />
+              
+              <input 
+              type="checkbox" 
+              name="clicked" 
+              onClick={this.handleChange}
+              />
+              Remember me
+              <br />
+            </ButtonGroup>
+           
+
+          
+=======
         <h3>Sign Up or Login to use the site</h3>
 
         <form>
@@ -158,8 +216,12 @@ class Login extends Component {
             Remember me
             <br />
           </ButtonGroup>
+>>>>>>> 4aafda2fc351d00e813b57169b66aeec1f57ac47
            
         </form>
+
+        
+        { this.state.viewPasswordResetModal ? <PasswordResetModal/> : null }
       
       </div>
     );
