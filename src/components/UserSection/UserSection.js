@@ -10,7 +10,11 @@ import fire from '../../config/fire';
       course: "",
       location: "",
       interests: "",
+<<<<<<< HEAD
       users: []
+=======
+      users:[]
+>>>>>>> 4aafda2fc351d00e813b57169b66aeec1f57ac47
     }
   }
 
@@ -30,6 +34,7 @@ import fire from '../../config/fire';
     Intrests: this.state.intrests /* This sends the values for profile info to the database*/
 });
 
+//const data =[{"Name":this.state.name},{"Age":this.state.age}];
 
 /*need to make Functionality for user filling all the fields before submitting*/
 
@@ -86,14 +91,68 @@ import fire from '../../config/fire';
           console.log(err);	
         }
         document.getElementById("info").reset();//reset value after entered
-
+        
     }
+
+
+
+/*
+    GET=(data)=> {
+     return(<table>
+        <thead>
+         <tr>
+           <th>Name</th>
+           <th>Age</th>
+           <th>Course</th>
+           <th>Intrests</th>
+           <th>Location</th>
+         </tr>
+   
+           <tr>
+             <td>{this.state.name}</td>
+             <td>{this.state.age}</td>
+             <td>{this.state.course}</td>
+             <td>{this.state.location}</td>
+             <td>{this.state.intrests}</td>
+             
+             </tr>
+         </thead>
+      </table>);
+      this.setState({ users:data});
+     
+      }
+  */   
+
   
   render() {
-
+  //  const data =[{"Name":this.state.name},{"Age":this.state.age}];
+   // const listItems = data.map((d) => <li key={d.name}>{d.name}</li>);
+   
     return (
       <div className="form-group col-md-6">
     
+    <table className="table table-bordered table-responsive">
+        <thead>
+         <tr>
+           <th>Name</th>
+           <th>Age</th>
+           <th>Course</th>
+           <th>Location</th>
+           <th>Intrests</th>
+         </tr>
+   
+           <tr>
+             <td>{this.state.name}</td>
+             <td>{this.state.age}</td>
+             <td>{this.state.course}</td>
+             <td>{this.state.location}</td>
+             <td>{this.state.intrests}</td>
+            
+             </tr>
+         </thead>
+         
+      </table>
+      
          <form onSubmit={this.Submit} id="info" style={{marginLeft:200}}>
 					<label for="inputName">Name</label>
 						<input  className="form-control" onChange={this.handleChange} type="text" placeholder="Enter Name" name="name" id="name"/>
@@ -122,10 +181,9 @@ import fire from '../../config/fire';
             
 						<button className="btn btn-primary" style={{marginLeft:100}} type="submit" >Submit</button>
 					</form>
-          <ul className="cool">
-          
-          <ol id ="lol"></ol>
-          </ul>
+         <ol id="lol">
+
+         </ol>
       </div>
 
     )
