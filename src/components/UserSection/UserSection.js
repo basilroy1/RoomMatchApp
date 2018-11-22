@@ -9,7 +9,8 @@ import fire from '../../config/fire';
       age: "",
       course: "",
       location: "",
-      interests: ""
+      interests: "",
+      users: []
     }
   }
 

@@ -3,6 +3,7 @@ import { FormGroup,FormControl, Button } from 'react-bootstrap';
 import fire from '../../config/fire';
 
 
+
 class PasswordResetModal extends Component {
   
   constructor(props) {
@@ -39,7 +40,7 @@ class PasswordResetModal extends Component {
     if(warningLen && validEmail)
       return "success";
     else 
-      return "danger"
+      return "error";
   } 
 
 
