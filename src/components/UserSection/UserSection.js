@@ -69,6 +69,7 @@ import fire from '../../config/fire';
         var g4=JSON.stringify(location);
         var g5=JSON.stringify(name);
         */
+
         var s=document.createTextNode("Name : "+name+' ');
         var s2=document.createTextNode("Age : "+age+' ');
         var s3=document.createTextNode("Course : "+course+' ');
@@ -79,7 +80,9 @@ import fire from '../../config/fire';
         r.appendChild(s2);
         r.appendChild(s3);
         r.appendChild(s4);
+        
         r.appendChild(s5);
+        
         }
         }
       
@@ -126,29 +129,28 @@ import fire from '../../config/fire';
    
     return (
       <div className="form-group col-md-6">
-    
+
     <table className="table table-bordered table-responsive">
         <thead>
          <tr>
            <th>Name</th>
            <th>Age</th>
            <th>Course</th>
-           <th>Location</th>
            <th>Intrests</th>
+           <th>Location</th>
          </tr>
    
            <tr>
-             <td>{this.state.name}</td>
+             <td className="table-success">{this.state.name}</td>
              <td>{this.state.age}</td>
              <td>{this.state.course}</td>
              <td>{this.state.location}</td>
              <td>{this.state.intrests}</td>
-            
+             
              </tr>
          </thead>
-         
       </table>
-      
+   
          <form onSubmit={this.Submit} id="info" style={{marginLeft:200}}>
 					<label for="inputName">Name</label>
 						<input  className="form-control" onChange={this.handleChange} type="text" placeholder="Enter Name" name="name" id="name"/>
