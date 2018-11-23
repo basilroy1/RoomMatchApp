@@ -125,7 +125,7 @@ class Login extends Component {
     return (
       <div className="container">
 
-<<<<<<< HEAD
+
         <h3 className="t">Sign Up or Login to use the site</h3>
 
         <form style ={{display: this.state.viewPasswordResetModal ?  "none" : "block"}}>
@@ -171,59 +171,15 @@ class Login extends Component {
               Remember me
               <br />
             </ButtonGroup>
-           
+    
 
-          
-=======
-        <h3>Sign Up or Login to use the site</h3>
-
-        <form>
-
-          <div className="form-group">
-            <label htmlFor="emailInput">Email address</label>
-            <input  
-            value={this.state.email} 
-            onChange={this.handleChange} 
-            type="email" 
-            name="email" 
-            className="form-control" 
-            placeholder="Enter your Maynooth email address" 
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="passwordInput">Password</label>
-            <input 
-            value={this.state.password} 
-            onChange={this.handleChange} 
-            type="password" 
-            name="password" 
-            className="form-control" 
-            placeholder="Enter your Password" 
-            />
-            <Button onClick={this.toggleModal}>Forgot your password?</Button>
-            { this.state.viewPasswordResetModal ? <PasswordResetModal/> : null }
-          </div> 
-
-          <ButtonGroup>
-            <Button onClick={this.login}>Login</Button>
-            <Button onClick={this.signup} >Signup</Button> <br />
-            <input 
-            type="checkbox" 
-            name="clicked" 
-            onClick={this.handleChange}
-            />
-            Remember me
-            <br />
-          </ButtonGroup>
->>>>>>> 4aafda2fc351d00e813b57169b66aeec1f57ac47
-           
-        </form>
-
+        
+</form>
         
         { this.state.viewPasswordResetModal ? <PasswordResetModal/> : null }
       
       </div>
+      
     );
   }
 }

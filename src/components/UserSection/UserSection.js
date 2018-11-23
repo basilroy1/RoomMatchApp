@@ -10,11 +10,7 @@ import fire from '../../config/fire';
       course: "",
       location: "",
       interests: "",
-<<<<<<< HEAD
-      users: []
-=======
       users:[]
->>>>>>> 4aafda2fc351d00e813b57169b66aeec1f57ac47
     }
   }
 
