@@ -1,0 +1,13 @@
+body{
+    background-color:rgb(233, 103, 103)
+}
+table{
+    background-color: darkgoldenrod;
+    border-color: aqua;
+
+    background-blend-mode: color
+}
+th,tr,td{
+    background-color: whitesmoke;
+    color:black;
+}
