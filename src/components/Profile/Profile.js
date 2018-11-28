@@ -12,8 +12,9 @@ class Profile extends Component {
     return (
       <div>
         <h1>User Profile Section</h1>
-
+     
       </div>
+      
     )
   }
 }

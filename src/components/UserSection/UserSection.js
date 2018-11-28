@@ -155,25 +155,7 @@ import fire from '../../config/fire';
       );
 }  
 */
-/*
-  Loop=()=> {
-    var that=this;
-    this.ref=new fire('https://console.firebase.google.com/project/roommatch-f2355/database/roommatch-f2355/data/User');
-    this.ref.on("value",function(snapshot){
-      var u=[];
-      snapshot.forEach(function(data){
-var t={
-  Name:data.val().name
-}
-u.push(t);
-that.setState({u: u});
-console.log(data.val());
-      });
-    });
-  }
 
-*/
-  
   render() {
 
     return (
