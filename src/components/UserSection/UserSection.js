@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import fire from '../../config/fire';
- class UserSection extends Component {
+ 
+class UserSection extends Component {
 
   constructor(props) {
     super(props);
@@ -10,11 +11,7 @@ import fire from '../../config/fire';
       course: "",
       location: "",
       interests: "",
-<<<<<<< HEAD
-      users: []
-=======
       users:[]
->>>>>>> 4aafda2fc351d00e813b57169b66aeec1f57ac47
     }
   }
 
