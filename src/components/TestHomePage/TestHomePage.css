@@ -1,0 +1,13 @@
+
+
+.mainSection {
+  background: rgb(62, 166, 180);
+  padding: 1%;
+  height: 100%;
+}
+
+.sideSection {
+  background: #eee;
+  height: 100%;
+  padding: 1%;
+}
