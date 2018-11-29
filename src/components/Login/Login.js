@@ -125,6 +125,7 @@ class Login extends Component {
     return (
       <div className="container">
 
+
         <h3 className="t">Sign Up or Login to use the site</h3>
 
         <form style ={{display: this.state.viewPasswordResetModal ?  "none" : "block"}}>
@@ -175,11 +176,13 @@ class Login extends Component {
           
            
         </form>
+    
 
-        
+
         { this.state.viewPasswordResetModal ? <PasswordResetModal/> : null }
       
       </div>
+      
     );
   }
 }
