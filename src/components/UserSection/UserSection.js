@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import fire from '../../config/fire';
- 
+import './UserSection.css';
 class UserSection extends Component {
 
   constructor(props) {
@@ -33,7 +33,7 @@ class UserSection extends Component {
 /*need to make Functionality for user filling all the fields before submitting*/
       var that=this;
       ref.on("value",function(snapshot){
-        var users=[];
+     
         snapshot.forEach(function(data){
       var t={
       Name:data.val().Name,
