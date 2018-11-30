@@ -43,14 +43,15 @@ class UserSection extends Component {
       Intrests:data.val().Intrests
       }
      
-      var name=t.Name;
+      var name=data.val();
       var age=t.Age;
       var course=t.Course;
       var location=t.Location;
       var intrests=t.Intrests;
       var r= document.getElementById("lol");
+      console.log(name);
      
-      var b=React.Children.toArray(name);    ///split into array
+      //var b=React.Children.toArray(name);    ///split into array
       var b2=React.Children.toArray(age);
       var b3=React.Children.toArray(course);
       var b4=React.Children.toArray(location);
@@ -58,13 +59,13 @@ class UserSection extends Component {
 
       //console.log(b[1]+" "+b2[1]+" "+b3[1]+" "+b4[1]+" "+b5[1]);
 
-      var s=document.createTextNode("Name : "+b+' ');
+     // var s=document.createTextNode("Name : "+b+' ');
       var s2=document.createTextNode("Age : "+b2+' ');
       var s3=document.createTextNode("Course : "+b3+' ');
       var s4=document.createTextNode("Location : "+b4+' ');
       var s5=document.createTextNode("Intrests : "+b5+' ');
     
-      r.appendChild(s);
+      //r.appendChild(s);
       r.appendChild(s2);
       r.appendChild(s3);
       r.appendChild(s4);
@@ -92,9 +93,6 @@ class UserSection extends Component {
       +
       r.appendChild(s5);
 */
-      users.push(t);
-     
-      that.setState({users: t});
     /*  var tif=Object.keys(users).map(function(item){
         return<li value={item}>{users[item]}</li>
         
@@ -177,27 +175,6 @@ class UserSection extends Component {
      
       <div className="form-group col-md-6">
        
-    <table className="table table-bordered table-responsive">
-        <thead>
-         <tr>
-           <th>Name</th>
-           <th>Age</th>
-           <th>Course</th>
-           <th>Intrests</th>
-           <th>Location</th>
-         </tr>
-   
-           <tr>
-             <td className="table-success">{this.state.name}</td>
-             <td>{this.state.age}</td>
-             <td>{this.state.course}</td>
-             <td>{this.state.location}</td>
-             <td>{this.state.intrests}</td>
-             
-             </tr>
-         </thead>
-      </table>
-
       <div>
 
          <form onSubmit={this.Submit} id="info">
@@ -229,7 +206,7 @@ class UserSection extends Component {
 						<button className="btn btn-primary" style={{marginLeft:100}} type="submit" >Submit</button>
 					</form>
          </div>
-          <div id="lol" className="text-block">
+          <div id="lol">
           <ul></ul>
           <ul></ul>
           <ul></ul>

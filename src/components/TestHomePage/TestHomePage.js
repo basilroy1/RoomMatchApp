@@ -8,6 +8,8 @@ class TestHomePage extends Component {
     super(props);
     this.state = {
       people: [{name: "Ronan", age:"17", course:"Leaving Cert"},{name: "Evan", age: "20", course: "csse"},{name: "Niamh", age: "19", course: "Geog"},{name: "Ronan", age:"17", course:"Leaving Cert"},{name: "Evan", age: "20", course: "csse"},{name: "Niamh", age: "19", course: "Geog"}  ]
+     // people: props.val()
+
     }
   }
 
@@ -25,6 +27,8 @@ class TestHomePage extends Component {
       <ListGroupItem key = {person.name}><strong>Name: </strong>{person.name}</ListGroupItem>
       <ListGroupItem key = {person.age}><strong>Age: </strong>{person.age}</ListGroupItem>
       <ListGroupItem key = {person.course}><strong>Course: </strong>{person.course}</ListGroupItem>
+      <ListGroupItem key = {person.location}><strong>Location: </strong>{person.location}</ListGroupItem>
+      <ListGroupItem key = {person.intrests}><strong>Intrests: </strong>{person.intrests}</ListGroupItem>
       <ListGroupItem>
       <OverlayTrigger
         trigger={['hover', 'focus']}
