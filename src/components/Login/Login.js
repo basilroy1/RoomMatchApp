@@ -171,11 +171,14 @@ class Login extends Component {
               onClick={this.handleChange}
               />Remember me<br />
             </ButtonGroup>
+           
+
+          
+           
+        </form>
     
 
-        
-</form>
-        
+
         { this.state.viewPasswordResetModal ? <PasswordResetModal/> : null }
       
       </div>
