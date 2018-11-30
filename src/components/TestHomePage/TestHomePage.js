@@ -8,8 +8,14 @@ class TestHomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+<<<<<<< HEAD
       hardCodedPeople: [{name: "Ronan", age:"17", course:"Leaving Cert"},{name: "Evan", age: "20", course: "csse"},{name: "Niamh", age: "19", course: "Geog"},{name: "Ronan", age:"17", course:"Leaving Cert"},{name: "Evan", age: "20", course: "csse"},{name: "Niamh", age: "19", course: "Geog"}],
       people: []
+=======
+      people: [{name: "Ronan", age:"17", course:"Leaving Cert"},{name: "Evan", age: "20", course: "csse"},{name: "Niamh", age: "19", course: "Geog"},{name: "Ronan", age:"17", course:"Leaving Cert"},{name: "Evan", age: "20", course: "csse"},{name: "Niamh", age: "19", course: "Geog"}  ]
+     // people: props.val()
+
+>>>>>>> 61d18a3c6820348f5644cc4768051c0ee7b03009
     }
   }
 
@@ -65,7 +71,12 @@ class TestHomePage extends Component {
       <ListGroupItem key = {person.age}><strong>Age: </strong>{person.age}</ListGroupItem>
       <ListGroupItem key = {person.location}><strong>Location: </strong>{person.location}</ListGroupItem>
       <ListGroupItem key = {person.course}><strong>Course: </strong>{person.course}</ListGroupItem>
+<<<<<<< HEAD
       <ListGroupItem key = {person.interests}><strong>Interests: </strong>{person.interests}</ListGroupItem>
+=======
+      <ListGroupItem key = {person.location}><strong>Location: </strong>{person.location}</ListGroupItem>
+      <ListGroupItem key = {person.intrests}><strong>Intrests: </strong>{person.intrests}</ListGroupItem>
+>>>>>>> 61d18a3c6820348f5644cc4768051c0ee7b03009
       <ListGroupItem>
       <OverlayTrigger
         trigger={['hover', 'focus']}
