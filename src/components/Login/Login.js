@@ -171,11 +171,14 @@ class Login extends Component {
               Remember me
               <br />
             </ButtonGroup>
+           
+
+          
+           
+        </form>
     
 
-        
-</form>
-        
+
         { this.state.viewPasswordResetModal ? <PasswordResetModal/> : null }
       
       </div>
