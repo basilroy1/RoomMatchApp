@@ -126,7 +126,7 @@ class Login extends Component {
       <div className="container">
 
 
-        <h3 className="t">Sign Up or Login to use the site</h3>
+        <h3 className="t">Welcome to RoomMatch</h3>
 
         <form style ={{display: this.state.viewPasswordResetModal ?  "none" : "block"}}>
           <div>
@@ -140,7 +140,9 @@ class Login extends Component {
               name="email" 
               className="form-control" 
               placeholder="Enter your Maynooth email address" 
+              
               />
+              
             </div>
 
             <div className="form-group">
@@ -167,9 +169,7 @@ class Login extends Component {
               type="checkbox" 
               name="clicked" 
               onClick={this.handleChange}
-              />
-              Remember me
-              <br />
+              />Remember me<br />
             </ButtonGroup>
            
 
