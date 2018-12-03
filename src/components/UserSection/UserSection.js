@@ -154,20 +154,8 @@ class UserSection extends Component {
         
     }
 
-/*
- Loop=(data)=>{
-  var user=data.val();
-  var keys=Object.keys(user);
-  this.setState({
-    users: user
-  });
-      this.keys.map((users) => 
-        <p>{console.log(users.name)}</p>
-  
-      );
-}  
-*/
 
+/*
 run=(interval, frames) =>{
 var int = 1;
 
@@ -179,13 +167,12 @@ function func() {
 
 var swap = window.setInterval(func, interval);
 }
-
+*/
   render() {
 
 return (
  
     <div className="container2">
-    {this.run(3000, 10)}
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'></link>
     <h3 id="header">Profile Details</h3>
 <div className="form-group col-md-10">
