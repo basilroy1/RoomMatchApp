@@ -8,41 +8,33 @@ class TestHomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-<<<<<<< HEAD
+
       hardCodedPeople: [{name: "Ronan", age:"17", course:"Leaving Cert"},{name: "Evan", age: "20", course: "csse"},{name: "Niamh", age: "19", course: "Geog"},{name: "Ronan", age:"17", course:"Leaving Cert"},{name: "Evan", age: "20", course: "csse"},{name: "Niamh", age: "19", course: "Geog"}],
       people: []
-=======
-      people: [{name: "Ronan", age:"17", course:"Leaving Cert"},{name: "Evan", age: "20", course: "csse"},{name: "Niamh", age: "19", course: "Geog"},{name: "Ronan", age:"17", course:"Leaving Cert"},{name: "Evan", age: "20", course: "csse"},{name: "Niamh", age: "19", course: "Geog"}  ]
-     // people: props.val()
-
->>>>>>> 61d18a3c6820348f5644cc4768051c0ee7b03009
     }
   }
 
   componentDidMount() {
     const db = fire.database();
     const ref = db.ref('User');
+
     let currentState = this.state.people;
-    const newState = [];
-    console.log("State before data fetch --> " + currentState);
-
-
-
     ref.on('value', (snapshot) => {
       snapshot.forEach( (data) => {
         const currentStudent = data.val();
         let user ={
-          name: currentStudent.Name,
-          age: currentStudent.Age,
-          location: currentStudent.Location,
-          course: currentStudent.Course,
-          interests: currentStudent.Intrests
+          "name": currentStudent.Name,
+          "age": currentStudent.Age,
+          "location": currentStudent.Location,
+          "course": currentStudent.Course,
+          "interests": currentStudent.Intrests
         }
         currentState.push(user);
 
       });
       console.log(currentState);
-    })
+    });
+
     this.setState({
       people: currentState
     });
@@ -52,10 +44,7 @@ class TestHomePage extends Component {
 
   render() {
 
-
-
-
-    const popoverHoverFocus = (
+      const popoverHoverFocus = (
       <Popover id="popover-trigger-hover-focus">
         <strong>Let's Connect!</strong>
       </Popover>
@@ -63,21 +52,14 @@ class TestHomePage extends Component {
 
     // TODO: Fix the mapping functionality to render the firebase data to the screen
 
-    let data = [...this.state.hardCodedPeople];
-    console.log(data);
+    let data = this.state.hardCodedPeople;
+    // console.log(data);
     let renderData = data.map((person) =>
-    <ListGroup>
+    <ListGroup key = {person.name}>
       <ListGroupItem key = {person.name}><strong>Name: </strong>{person.name}</ListGroupItem>
       <ListGroupItem key = {person.age}><strong>Age: </strong>{person.age}</ListGroupItem>
       <ListGroupItem key = {person.location}><strong>Location: </strong>{person.location}</ListGroupItem>
       <ListGroupItem key = {person.course}><strong>Course: </strong>{person.course}</ListGroupItem>
-<<<<<<< HEAD
-      <ListGroupItem key = {person.interests}><strong>Interests: </strong>{person.interests}</ListGroupItem>
-=======
-      <ListGroupItem key = {person.location}><strong>Location: </strong>{person.location}</ListGroupItem>
-      <ListGroupItem key = {person.intrests}><strong>Intrests: </strong>{person.intrests}</ListGroupItem>
->>>>>>> 61d18a3c6820348f5644cc4768051c0ee7b03009
-      <ListGroupItem>
       <OverlayTrigger
         trigger={['hover', 'focus']}
         placement="right"
@@ -85,7 +67,6 @@ class TestHomePage extends Component {
       >
       <Button>Match With This Person</Button>
     </OverlayTrigger>
-    </ListGroupItem>
     </ListGroup>
 
     );
