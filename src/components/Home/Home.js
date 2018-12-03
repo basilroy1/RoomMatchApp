@@ -10,7 +10,7 @@ class Home extends Component {
     this.logout = this.logout.bind(this);
   }
 
-  logout(e) {
+  logout = (e) => {
     e.preventDefault();
     fire.auth().signOut();
   }
