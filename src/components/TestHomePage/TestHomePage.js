@@ -11,6 +11,11 @@ class TestHomePage extends Component {
 
       hardCodedPeople: [{name: "Ronan", age:"17", course:"Leaving Cert"},{name: "Evan", age: "20", course: "csse"},{name: "Niamh", age: "19", course: "Geog"},{name: "Ronan", age:"17", course:"Leaving Cert"},{name: "Evan", age: "20", course: "csse"},{name: "Niamh", age: "19", course: "Geog"}],
       people: []
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> dc6418aab408ab5cb99d79a0e9c95c0f6f32c2b9
     }
   }
 
@@ -60,6 +65,15 @@ class TestHomePage extends Component {
       <ListGroupItem key = {person.age}><strong>Age: </strong>{person.age}</ListGroupItem>
       <ListGroupItem key = {person.location}><strong>Location: </strong>{person.location}</ListGroupItem>
       <ListGroupItem key = {person.course}><strong>Course: </strong>{person.course}</ListGroupItem>
+<<<<<<< HEAD
+=======
+
+      <ListGroupItem key = {person.interests}><strong>Interests: </strong>{person.interests}</ListGroupItem>
+
+      <ListGroupItem key = {person.location}><strong>Location: </strong>{person.location}</ListGroupItem>
+      <ListGroupItem key = {person.intrests}><strong>Intrests: </strong>{person.intrests}</ListGroupItem>
+      <ListGroupItem>
+>>>>>>> dc6418aab408ab5cb99d79a0e9c95c0f6f32c2b9
       <OverlayTrigger
         trigger={['hover', 'focus']}
         placement="right"

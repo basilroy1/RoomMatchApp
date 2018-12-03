@@ -10,8 +10,7 @@ class UserSection extends Component {
       age: "",
       course: "",
       location: "",
-      interests: "",
-      users:[]
+      interests: ""
     }
   }
 
@@ -43,7 +42,7 @@ class UserSection extends Component {
       Intrests:data.val().Intrests
       }
      
-      var name=data.val();
+      var name=data.val();/// gets all value from firebase
       var age=t.Age;
       var course=t.Course;
       var location=t.Location;
@@ -169,53 +168,74 @@ class UserSection extends Component {
 }  
 */
 
+run=(interval, frames) =>{
+var int = 1;
+
+function func() {
+    document.body.id = "b"+int;
+    int++;
+    if(int === frames) { int = 1; }
+}
+
+var swap = window.setInterval(func, interval);
+}
+
   render() {
 
-    return (
-     
-      <div className="form-group col-md-6">
-       
-      <div>
+return (
+ 
+    <div className="container2">
+    {this.run(3000, 10)}
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'></link>
+    <h3 id="header">Profile Details</h3>
+<div className="form-group col-md-10">
+<form onSubmit={this.Submit} id="info">
+        
+  <div className="form-row">
+    <div className="form-group col-md-6">
+      <label htmlfor="inputName" style={{color:"rgb(224, 224, 110)"}}>Name</label>
+      <input onChange={this.handleChange}  className="form-control" type="name" id="name" name="name" placeholder="Enter Name"/>
+      {this.state.name ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Name</span>}
 
-         <form onSubmit={this.Submit} id="info">
-					<label htmlFor="inputName">Name</label>
-						<input  className="form-control" onChange={this.handleChange} type="text" placeholder="Enter Name" name="name" id="name"/>
-            {this.state.name ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Name</span>}
-						<br></br>
-                        
-					<label htmlFor="inputAge">Age</label>
-						<input className="form-control" onChange={this.handleChange} type="age" placeholder="Enter Age" name="age" id="age"/>
-            {this.state.age ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Age</span>}
-						<br></br>
-                       
-					<label htmlFor="inputCourse">Course</label>
-						<input className="form-control" onChange={this.handleChange}  type="text" placeholder="Enter Course" name="course" id="course"/>
-            {this.state.course ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Course</span>}
-						<br></br>
-                        
-					<label htmlFor="inputLocation">Location</label>
-						<input className="form-control" onChange={this.handleChange}  type="location" placeholder="Enter Location" name="location" id="location"/>
-            {this.state.location ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Location</span>}
-						<br></br>
-                        
-					<label htmlFor="inputIntrests">Intrests</label>
-						<input className="form-control" onChange={this.handleChange}type="text" placeholder="Enter Intrests" name="intrests" id="intrests"/>
-            {this.state.intrests ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Intrests</span>}
-						<br></br>   
-            
-						<button className="btn btn-primary" style={{marginLeft:100}} type="submit" >Submit</button>
-					</form>
-         </div>
+    </div>
+    <div className="form-group col-md-6">
+      <label htmlfor="inputAge" style={{color:"rgb(224, 224, 110)"}}>Age</label>
+      <input onChange={this.handleChange} className="form-control" type="age" id="age" name="age" placeholder="Enter Age"/>
+      {this.state.age ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Age</span>}
+
+    </div>
+  </div>
+  <div className="form-group">
+    <label htmlfor="inputLocation" style={{color:"rgb(224, 224, 110)"}}>Location</label>
+    <input onChange={this.handleChange} className="form-control" type="text" id="location" name="location" placeholder="Enter Location"/>
+    {this.state.location ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Location</span>}
+
+  </div>
+  <div className="form-row">
+  <div className="form-form-group col-md-6">
+    <label htmlfor="inputCourse" style={{color:"rgb(224, 224, 110)"}}>Course</label>
+    <input onChange={this.handleChange} className="form-control" type="text" id="course" name="course" placeholder="Enter Course"/>
+    {this.state.course ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Course</span>}
+
+  </div>
+  
+  <div className="form-row">
+    <div className="form-group col-md-6">
+      <label htmlfor="inputIntrests" style={{color:"rgb(224, 224, 110)"}}>Interests</label>
+      <input onChange={this.handleChange} className="form-control" type="text" name="intrests" id="intrests" placeholder="Enter Interests"/>
+      {this.state.intrests ? <span style={{color:"#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Interests</span>}
+    </div>
+    </div>
+</div>
+
+		</form>
+    
+          <button className="btn btn-primary" type="submit"id="button" >Save</button>
+          </div>
           <div id="lol">
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
          
           </div>
-      </div>
-         
+          </div>
 
     )
   }
