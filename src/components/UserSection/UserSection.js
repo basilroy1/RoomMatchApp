@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import fire from '../../config/fire';
- 
+import './UserSection.css';
 class UserSection extends Component {
 
   constructor(props) {
@@ -10,8 +10,7 @@ class UserSection extends Component {
       age: "",
       course: "",
       location: "",
-      interests: "",
-      users:[]
+      interests: ""
     }
   }
 
@@ -33,7 +32,7 @@ class UserSection extends Component {
 /*need to make Functionality for user filling all the fields before submitting*/
       var that=this;
       ref.on("value",function(snapshot){
-        var users=[];
+     
         snapshot.forEach(function(data){
       var t={
       Name:data.val().Name,
@@ -43,26 +42,41 @@ class UserSection extends Component {
       Intrests:data.val().Intrests
       }
      
-      var name=t.Name;
+      var name=data.val();/// gets all value from firebase
       var age=t.Age;
       var course=t.Course;
       var location=t.Location;
       var intrests=t.Intrests;
       var r= document.getElementById("lol");
+      console.log(name);
      
-      var b=React.Children.toArray(name);    ///split into array
+      //var b=React.Children.toArray(name);    ///split into array
       var b2=React.Children.toArray(age);
       var b3=React.Children.toArray(course);
       var b4=React.Children.toArray(location);
       var b5=React.Children.toArray(intrests);
-      console.log(b+" "+b2+" "+b3+" "+b4+" "+b5);
-      var c=0;
-      for(var i=0;i<b.length;i++){
+
+      //console.log(b[1]+" "+b2[1]+" "+b3[1]+" "+b4[1]+" "+b5[1]);
+
+     // var s=document.createTextNode("Name : "+b+' ');
+      var s2=document.createTextNode("Age : "+b2+' ');
+      var s3=document.createTextNode("Course : "+b3+' ');
+      var s4=document.createTextNode("Location : "+b4+' ');
+      var s5=document.createTextNode("Intrests : "+b5+' ');
+    
+      //r.appendChild(s);
+      r.appendChild(s2);
+      r.appendChild(s3);
+      r.appendChild(s4);
+      r.appendChild(s5);
+
+      /*for(var i=0;i<b.length;i++){
         c++;
        var d= document.createTextNode(b[i]);
        r.appendChild(d);
         
       }
+      */
      // console.log(name,age,course,location,intrests);
 /*
       var s=document.createTextNode("Name : "+name+' ');
@@ -75,12 +89,9 @@ class UserSection extends Component {
       r.appendChild(s2);
       r.appendChild(s3);
       r.appendChild(s4);
-      
+      +
       r.appendChild(s5);
 */
-      users.push(t);
-     
-      that.setState({users: t});
     /*  var tif=Object.keys(users).map(function(item){
         return<li value={item}>{users[item]}</li>
         
@@ -143,97 +154,75 @@ class UserSection extends Component {
         
     }
 
-/*
- Loop=(data)=>{
-  var user=data.val();
-  var keys=Object.keys(user);
-  this.setState({
-    users: user
-  });
-      this.keys.map((users) => 
-        <p>{console.log(users.name)}</p>
-  
-      );
-}  
-*/
-/*
-  Loop=()=> {
-    var that=this;
-    this.ref=new fire('https://console.firebase.google.com/project/roommatch-f2355/database/roommatch-f2355/data/User');
-    this.ref.on("value",function(snapshot){
-      var u=[];
-      snapshot.forEach(function(data){
-var t={
-  Name:data.val().name
-}
-u.push(t);
-that.setState({u: u});
-console.log(data.val());
-      });
-    });
-  }
 
+/*
+run=(interval, frames) =>{
+var int = 1;
+
+function func() {
+    document.body.id = "b"+int;
+    int++;
+    if(int === frames) { int = 1; }
+}
+
+var swap = window.setInterval(func, interval);
+}
 */
-  
   render() {
 
-    return (
-     
-      <div className="form-group col-md-6">
-       
-    <table className="table table-bordered table-responsive">
-        <thead>
-         <tr>
-           <th>Name</th>
-           <th>Age</th>
-           <th>Course</th>
-           <th>Intrests</th>
-           <th>Location</th>
-         </tr>
-   
-           <tr>
-             <td className="table-success">{this.state.name}</td>
-             <td>{this.state.age}</td>
-             <td>{this.state.course}</td>
-             <td>{this.state.location}</td>
-             <td>{this.state.intrests}</td>
-             
-             </tr>
-         </thead>
-      </table>
-   
-         <form onSubmit={this.Submit} id="info" style={{marginLeft:200}}>
-					<label htmlFor="inputName">Name</label>
-						<input  className="form-control" onChange={this.handleChange} type="text" placeholder="Enter Name" name="name" id="name"/>
-            {this.state.name ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Name</span>}
-						<br></br>
-                        
-					<label htmlFor="inputAge">Age</label>
-						<input className="form-control" onChange={this.handleChange} type="age" placeholder="Enter Age" name="age" id="age"/>
-            {this.state.age ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Age</span>}
-						<br></br>
-                       
-					<label htmlFor="inputCourse">Course</label>
-						<input className="form-control" onChange={this.handleChange}  type="text" placeholder="Enter Course" name="course" id="course"/>
-            {this.state.course ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Course</span>}
-						<br></br>
-                        
-					<label htmlFor="inputLocation">Location</label>
-						<input className="form-control" onChange={this.handleChange}  type="location" placeholder="Enter Location" name="location" id="location"/>
-            {this.state.location ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Location</span>}
-						<br></br>
-                        
-					<label htmlFor="inputIntrests">Intrests</label>
-						<input className="form-control" onChange={this.handleChange}type="text" placeholder="Enter Intrests" name="intrests" id="intrests"/>
-            {this.state.intrests ? <span style={{color: "green"}}>That's Good!</span> :<span style={{color: "red"}}>Please Enter Intrests</span>}
-						<br></br>   
-            
-						<button className="btn btn-primary" style={{marginLeft:100}} type="submit" >Submit</button>
-					</form>
-         <ul id="lol">
+return (
+ 
+    <div className="container2">
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'></link>
+    <h3 id="header">Profile Details</h3>
+<div className="form-group col-md-10">
+<form onSubmit={this.Submit} id="info">
+        
+  <div className="form-row">
+    <div className="form-group col-md-6">
+      <label htmlfor="inputName" style={{color:"rgb(224, 224, 110)"}}>Name</label>
+      <input onChange={this.handleChange}  className="form-control" type="name" id="name" name="name" placeholder="Enter Name"/>
+      {this.state.name ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Name</span>}
 
-         </ul>
-      </div>
+    </div>
+    <div className="form-group col-md-6">
+      <label htmlfor="inputAge" style={{color:"rgb(224, 224, 110)"}}>Age</label>
+      <input onChange={this.handleChange} className="form-control" type="age" id="age" name="age" placeholder="Enter Age"/>
+      {this.state.age ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Age</span>}
+
+    </div>
+  </div>
+  <div className="form-group">
+    <label htmlfor="inputLocation" style={{color:"rgb(224, 224, 110)"}}>Location</label>
+    <input onChange={this.handleChange} className="form-control" type="text" id="location" name="location" placeholder="Enter Location"/>
+    {this.state.location ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Location</span>}
+
+  </div>
+  <div className="form-row">
+  <div className="form-form-group col-md-6">
+    <label htmlfor="inputCourse" style={{color:"rgb(224, 224, 110)"}}>Course</label>
+    <input onChange={this.handleChange} className="form-control" type="text" id="course" name="course" placeholder="Enter Course"/>
+    {this.state.course ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Course</span>}
+
+  </div>
+  
+  <div className="form-row">
+    <div className="form-group col-md-6">
+      <label htmlfor="inputIntrests" style={{color:"rgb(224, 224, 110)"}}>Interests</label>
+      <input onChange={this.handleChange} className="form-control" type="text" name="intrests" id="intrests" placeholder="Enter Interests"/>
+      {this.state.intrests ? <span style={{color:"#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Interests</span>}
+    </div>
+    </div>
+</div>
+
+		</form>
+    
+          <button className="btn btn-primary" type="submit"id="button" >Save</button>
+          </div>
+          <div id="lol">
+         
+          </div>
+          </div>
 
     )
   }
