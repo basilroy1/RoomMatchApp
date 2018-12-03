@@ -2,8 +2,10 @@ body{
     margin: 0 auto;
     background-image: url("background.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 820px;
+    background-size: 100% ;
+    display: grid;
     background-color:pink;
+    
 }
 .container{
     width: 500px;
