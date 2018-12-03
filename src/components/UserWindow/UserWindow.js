@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { ListGroup, ListGroupItem, Button, Popover, OverlayTrigger } from 'react-bootstrap';
-
 class UserWindow extends Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   render() {
 
