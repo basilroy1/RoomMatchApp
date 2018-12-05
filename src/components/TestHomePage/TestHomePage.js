@@ -70,13 +70,11 @@ class TestHomePage extends Component {
 
     return (
       <div>
-        <Button onClick={this.logCurrentUser}>
-        Log
-        </Button>
 
         <Grid>
           <Row>
             <Col className="mainSection" xs={6} md={5}>
+            <Button onClick = {this.logout}>Logout</Button>
               {renderData}
             </Col>
             <Col className="userSection" md={4}>
@@ -84,7 +82,7 @@ class TestHomePage extends Component {
             </Col>
           </Row>
         </Grid>
-        <Button onClick = {this.logout}>Logout</Button>
+
 
 
 
