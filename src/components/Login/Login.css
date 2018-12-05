@@ -1,14 +1,17 @@
 body{
 
-    margin: 0 auto;
     background-image: url("background.jpg");
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    /* background-color:pink; */
     background-size: 100% ;
     display: grid;
     background-color:pink;
     
 }
-.container{
+
+.container1{
     width: 500px;
     height: 400px;
     text-align: center;

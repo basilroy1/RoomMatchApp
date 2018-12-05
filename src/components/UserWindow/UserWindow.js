@@ -9,7 +9,7 @@ class UserWindow extends Component {
         <strong>Let's connect!</strong>
       </Popover>
     );
-
+      
     return (
       <div>
         <ListGroup>
@@ -25,7 +25,7 @@ class UserWindow extends Component {
           >
           <Button>Match With This Person</Button>
           </OverlayTrigger>
-      </ListGroup>
+        </ListGroup>
       </div>
     )
   }
