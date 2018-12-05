@@ -161,16 +161,19 @@ class Login extends Component {
             </div>
 
             <ButtonGroup>
-              <Button onClick={this.login}>Login</Button>
-              <Button onClick={this.toggleModal}>Forgot your password?</Button>
-              <Button onClick={this.signup} >Signup</Button> <br />
-              
+              <Button bsStyle="success" onClick={this.login}>Login</Button>
+              <Button bsStyle="danger" onClick={this.toggleModal}>Forgot your password?</Button>
+              <Button bsStyle="primary" onClick={this.signup} >Signup</Button> <br />
+             
               <input 
-              type="checkbox" 
-              name="clicked" 
+              type="checkbox"
+              name="clicked"
               onClick={this.handleChange}
-              />Remember me<br />
-            </ButtonGroup>
+              />Remember me?<br/>
+              
+			
+              </ ButtonGroup >
+          
            
 
           
