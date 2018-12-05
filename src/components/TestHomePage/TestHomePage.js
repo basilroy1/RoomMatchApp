@@ -32,7 +32,7 @@ class TestHomePage extends Component {
           "age": currentStudent.Age,
           "location": currentStudent.Location,
           "course": currentStudent.Course,
-          "interests": currentStudent.Intrests
+          "interests": currentStudent.Interests
         }
         currentState.push(user);
 
@@ -44,10 +44,10 @@ class TestHomePage extends Component {
     });
 
     console.log(this.state);
-    
+
   }
-  
-  logout = e => { 
+
+  logout = e => {
     e.preventDefault();
     fire.auth().signOut();
   }
@@ -58,15 +58,13 @@ class TestHomePage extends Component {
     let data = this.state.people;
     // console.log(data);
     let renderData = data.map((person) =>
-        <UserWindow 
+        <UserWindow
           name = {person.name}
           age = {person.age}
           location = {person.location}
           course = {person.course}
           interests = {person.interests}
         />
-
-        
 
     );
 
@@ -75,9 +73,9 @@ class TestHomePage extends Component {
         <Button onClick={this.logCurrentUser}>
         Log
         </Button>
-        
+
         <Grid>
-          <Row >
+          <Row>
             <Col className="mainSection" xs={6} md={5}>
               {renderData}
             </Col>
@@ -87,7 +85,7 @@ class TestHomePage extends Component {
           </Row>
         </Grid>
         <Button onClick = {this.logout}>Logout</Button>
-        
+
 
 
 

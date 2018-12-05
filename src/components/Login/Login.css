@@ -37,12 +37,12 @@ input{
     
 }
 h3{
-    ont-size: 3em;
-      font-weight: 300;
-      color: rgba(87, 15, 15, 0.7);
-      display: inline-block;
-      padding-bottom: 5px;
-      text-shadow: 1px 1px 3px $shadow-color;
+    font-size: 3em;
+    font-weight: 300;
+    color: rgba(87, 15, 15, 0.7);
+    display: inline-block;
+    padding-bottom: 5px;
+    text-shadow: 1px 1px 3px $shadow-color;
 }
 label{
     height: 35px;
