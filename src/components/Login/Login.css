@@ -1,13 +1,19 @@
 body{
 
-    background-image: url("background.jpg");
+    background-image: url("background1.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
     /* background-color:pink; */
     background-size: 100% ;
     display: grid;
-    background-color:pink;
+   
+   
+    padding: 0;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
     
 }
 
@@ -15,7 +21,7 @@ body{
     width: 500px;
     height: 400px;
     text-align: center;
-    background-color: rgba(243, 189, 189, 0.7);
+    /* background-color: rgba(243, 189, 189, 0.7); */
     border-radius: 4px;
     margin: 0 auto;
     margin-top: 150px;
@@ -37,12 +43,12 @@ input{
     
 }
 h3{
-    ont-size: 3em;
+    font-size: 3em;
       font-weight: 300;
       color: rgba(87, 15, 15, 0.7);
       display: inline-block;
       padding-bottom: 5px;
-      text-shadow: 1px 1px 3px $shadow-color;
+      text-shadow: 1px 1px 3px shadow-color;
 }
 label{
     height: 35px;
