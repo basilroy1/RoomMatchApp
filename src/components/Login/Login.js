@@ -123,7 +123,7 @@ class Login extends Component {
   render() {
 
     return (
-      <div className="container">
+      <div className="container1">
 
 
         <h3 className="t">Welcome to RoomMatch</h3>

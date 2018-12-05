@@ -3,6 +3,7 @@ import fire from '../../config/fire';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 import './TestHomePage.css';
 import UserWindow from '../UserWindow/UserWindow';
+import UserSection from '../UserSection/UserSection';
 
 
 
@@ -36,7 +37,6 @@ class TestHomePage extends Component {
         currentState.push(user);
 
       });
-      // console.log(currentState);
     });
 
     this.setState({
@@ -46,13 +46,11 @@ class TestHomePage extends Component {
     console.log(this.state);
     
   }
-
-  logout = e => {
+  
+  logout = e => { 
     e.preventDefault();
-    fire.auth().signOut()
-    
+    fire.auth().signOut();
   }
-
 
 
   render() {
@@ -74,14 +72,22 @@ class TestHomePage extends Component {
 
     return (
       <div>
+        <Button onClick={this.logCurrentUser}>
+        Log
+        </Button>
+        
         <Grid>
           <Row >
-            <Col className="mainSection" xs={12} md={10}>
+            <Col className="mainSection" xs={6} md={5}>
               {renderData}
+            </Col>
+            <Col className="userSection" md={4}>
+              <UserSection />
             </Col>
           </Row>
         </Grid>
         <Button onClick = {this.logout}>Logout</Button>
+        
 
 
 

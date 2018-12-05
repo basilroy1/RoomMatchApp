@@ -1,12 +1,13 @@
 body{
 
-    margin: 0 auto;
     background-image: url("background.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 820px;
-    background-color:pink;
+    background-attachment: fixed;
+    background-size: 100%;
+    /* background-color:pink; */
 }
-.container{
+
+.container1{
     width: 500px;
     height: 400px;
     text-align: center;
