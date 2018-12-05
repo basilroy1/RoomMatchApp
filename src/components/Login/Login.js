@@ -153,6 +153,7 @@ class Login extends Component {
               type="password" 
               name="password" 
               className="form-control" 
+              
               placeholder="Enter your Password" 
               />
               
