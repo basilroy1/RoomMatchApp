@@ -23,11 +23,12 @@ class UserSection extends Component {
     var ref=fire.database().ref('User'); 
     var newRef=ref.push();
     newRef.set({
+    Id: fire.auth().currentUser.uid,
     Name: this.state.name,            /* This sends the values for profile info to the database*/
     Age: this.state.age,
     Course: this.state.course,
     Location: this.state.location,
-    Intrests: this.state.intrests 
+    Interests: this.state.intrests 
 });
 /*need to make Functionality for user filling all the fields before submitting*/
       var that=this;
@@ -214,10 +215,10 @@ return (
     </div>
     </div>
 </div>
-
+<button className="btn btn-primary" type="submit"id="button" >Save</button>
 		</form>
     
-          <button className="btn btn-primary" type="submit"id="button" >Save</button>
+          
           </div>
           <div id="lol">
          
