@@ -3,6 +3,7 @@ import fire from '../../config/fire';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 import './TestHomePage.css';
 import UserWindow from '../UserWindow/UserWindow';
+import UserSection from '../UserSection/UserSection';
 
 
 
@@ -31,12 +32,11 @@ class TestHomePage extends Component {
           "age": currentStudent.Age,
           "location": currentStudent.Location,
           "course": currentStudent.Course,
-          "interests": currentStudent.Intrests
+          "interests": currentStudent.Interests
         }
         currentState.push(user);
 
       });
-      // console.log(currentState);
     });
 
     this.setState({
@@ -44,15 +44,13 @@ class TestHomePage extends Component {
     });
 
     console.log(this.state);
-    
+
   }
 
   logout = e => {
     e.preventDefault();
-    fire.auth().signOut()
-    
+    fire.auth().signOut();
   }
-
 
 
   render() {
@@ -60,7 +58,7 @@ class TestHomePage extends Component {
     let data = this.state.people;
     // console.log(data);
     let renderData = data.map((person) =>
-        <UserWindow 
+        <UserWindow
           name = {person.name}
           age = {person.age}
           location = {person.location}
@@ -68,20 +66,24 @@ class TestHomePage extends Component {
           interests = {person.interests}
         />
 
-        
-
     );
 
     return (
       <div>
+
         <Grid>
-          <Row >
-            <Col className="mainSection" xs={12} md={10}>
+          <Row>
+            <Col className="mainSection" xs={6} md={5}>
+            <Button onClick = {this.logout}>Logout</Button>
               {renderData}
+            </Col>
+            <Col className="userSection" md={4}>
+              <UserSection />
             </Col>
           </Row>
         </Grid>
-        <Button onClick = {this.logout}>Logout</Button>
+
+
 
 
 

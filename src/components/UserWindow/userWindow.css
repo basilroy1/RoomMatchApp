@@ -1,0 +1,16 @@
+.userProfile {
+ background: #eee;
+ border: 1px solid white;
+ padding: 5%;
+  
+}
+
+#name {
+  font-weight: bold;
+  color: rgb(214, 62, 62);
+
+}
+
+ul {
+  list-style: none;
+}
