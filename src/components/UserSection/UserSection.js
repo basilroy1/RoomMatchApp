@@ -192,15 +192,16 @@ return (
  
 
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'></link>
-    <h3 id="header">Profile Details</h3>
+    
 <div className="form-group col-md-10">
 <form onSubmit={this.Submit} id="info">
+<h3 id="header">Profile Details</h3>
         
   <div className="form-row">
     <div className="form-group col-md-6">
-      <label htmlfor="inputName" style={{color:"rgb(224, 224, 110)"}}>Name</label>
-      <input onChange={this.handleChange}  className="form-control" type="name" id="name" name="name" placeholder="Enter Name"/>
-      {this.state.name ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Name</span>}
+      <label htmlfor="inputName" style={{color:"rgb(224, 224, 110)"}}>Age</label>
+      <input onChange={this.handleChange} className="form-control" type="age" id="age" name="age" placeholder="Enter Age"/>
+      {this.state.age ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Age</span>}
 
     </div>
     <div className="form-group col-md-6">
@@ -235,8 +236,7 @@ return (
 <button className="btn btn-primary" type="submit"id="button" >Save</button>
 		</form>
     
-          
-          </div>
+                    </div>
      <div id="mySidenav" class="sidenav">
   <a href="javascript:void(4)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">About</a>
