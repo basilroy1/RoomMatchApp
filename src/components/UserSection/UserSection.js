@@ -65,12 +65,12 @@ class UserSection extends Component {
       var s4=document.createTextNode("Location : "+b4+' ');
       var s5=document.createTextNode("Intrests : "+b5+' ');
     
-      //r.appendChild(s);
+      /*r.appendChild(s);
       r.appendChild(s2);
       r.appendChild(s3);
       r.appendChild(s4);
       r.appendChild(s5);
-
+*/
       /*for(var i=0;i<b.length;i++){
         c++;
        var d= document.createTextNode(b[i]);
@@ -199,14 +199,13 @@ return (
         
   <div className="form-row">
     <div className="form-group col-md-6">
-      <label htmlfor="inputName" style={{color:"rgb(224, 224, 110)"}}>Age</label>
-      <input onChange={this.handleChange} className="form-control" type="age" id="age" name="age" placeholder="Enter Age"/>
-      {this.state.age ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Age</span>}
-
+      <label htmlfor="inputName" style={{color:"rgb(224, 224, 110)"}}>Name</label>
+      <input onChange={this.handleChange} className="form-control" type="text" name="name" placeholder="Enter Name"/>
+      {this.state.name ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Name</span>}
     </div>
     <div className="form-group col-md-6">
       <label htmlfor="inputAge" style={{color:"rgb(224, 224, 110)"}}>Age</label>
-      <input onChange={this.handleChange} className="form-control" type="age" id="age" name="age" placeholder="Enter Age"/>
+      <input onChange={this.handleChange} className="form-control" type="text" id="age" name="age" placeholder="Enter Age"/>
       {this.state.age ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Age</span>}
 
     </div>
@@ -236,16 +235,15 @@ return (
 <button className="btn btn-primary" type="submit"id="button" >Save</button>
 		</form>
     
-                    </div>
+</div>
      <div id="mySidenav" class="sidenav">
   <a href="javascript:void(4)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">About</a>
   <a href="#">Services</a>
   <a href="#">Clients</a>
   <a href="#">Contact</a>
-</div>
-
-          </div>
+    </div>
+ </div>
 
     )
   }
