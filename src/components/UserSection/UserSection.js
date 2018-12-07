@@ -30,7 +30,7 @@ class UserSection extends Component {
     Intrests: this.state.intrests 
 });
 /*need to make Functionality for user filling all the fields before submitting*/
-      var that=this;
+     // var that=this;
       ref.on("value",function(snapshot){
      
         snapshot.forEach(function(data){
@@ -168,11 +168,28 @@ function func() {
 var swap = window.setInterval(func, interval);
 }
 */
+
+
+ 
   render() {
+  /*
+const f=(
+openNav=()=> {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+<span  onclick={this.openNav}>open</span>
+ closeNav=()=> {
+    document.getElementById("mySidenav").style.width = "0";
+}
+);//for slide nav bar
+*/
 
 return (
- 
+
     <div className="container2">
+   
+ 
+
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'></link>
     <h3 id="header">Profile Details</h3>
 <div className="form-group col-md-10">
@@ -219,9 +236,14 @@ return (
     
           <button className="btn btn-primary" type="submit"id="button" >Save</button>
           </div>
-          <div id="lol">
-         
-          </div>
+     <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(4)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
           </div>
 
     )
