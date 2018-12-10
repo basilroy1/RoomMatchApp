@@ -36,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.state.user ? (<UserSection />) : (<Login />)}
+        {this.state.user ? (<TestHomePage />) : (<Login />)}
       </div>
     );
   }

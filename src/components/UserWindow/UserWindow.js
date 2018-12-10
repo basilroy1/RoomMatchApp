@@ -11,10 +11,12 @@ class UserWindow extends Component {
   }
 
   handleClick = e => {
+
     e.preventDefault();
     this.setState({
       readMoreIsClicked: !(this.state.readMoreIsClicked)
     });
+    
   }
 
 
@@ -25,12 +27,12 @@ class UserWindow extends Component {
       <div className="userProfile">
         <h3 id="name">{this.props.name}</h3>
         <ul>
-          <li className="listItem">{this.props.age}</li>
-          <li className="listItem">{this.props.location}</li>
-          <li className="listItem">{this.props.course}</li>
-          <li className="listItem">{this.props.interests}</li>
+          <li className="listItem">Age: {this.props.age}</li>
+          <li className="listItem">Location: {this.props.location}</li>
+          <li className="listItem">Course: {this.props.course}</li>
+          
         </ul>
-        <button onClick={this.handleClick}>Want to know more?</button>
+        <button id="moreInfoButton" onClick={this.handleClick}>More info</button>
         {this.state.readMoreIsClicked ?<UserBio info = {this.props.interests}/> : null}
       </div>
     )

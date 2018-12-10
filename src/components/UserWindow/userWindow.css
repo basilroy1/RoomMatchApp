@@ -1,13 +1,32 @@
 .userProfile {
+
  background: #eee;
- border: 1px solid white;
- padding: 5%;
+ text-align: center;
+ border: 1px solid grey;
+ vertical-align: middle;
+ padding: 2.5%;
+ border-radius: 10px;
+ margin: 1% 25% 1% 25%;
+ box-shadow: 1px 1px 5px #555 inset;  
   
 }
 
+#moreInfoButton {
+  
+  border: none;
+  border-radius: 10px;
+  padding: 2%;
+  background: #5cb85c;
+}
+
+#moreInfoButton:hover{
+  color: white;
+  background: #428bca;
+}
+
 #name {
+
   font-weight: bold;
-  color: rgb(214, 62, 62);
 
 }
 
