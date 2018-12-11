@@ -172,7 +172,9 @@ var swap = window.setInterval(func, interval);
   render() {
 
 return (
- 
+
+  
+
     <div className="container2">
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'></link>
     <h3 id="header">Profile Details</h3>

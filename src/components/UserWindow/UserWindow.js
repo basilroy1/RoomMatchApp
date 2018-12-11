@@ -11,10 +11,10 @@ class UserWindow extends Component {
     );
       
     return (
-      <div>
+    
         <ListGroup>
-          <ListGroupItem>Name: {this.props.name}</ListGroupItem>
-          <ListGroupItem>Age: {this.props.age}</ListGroupItem>
+           <ListGroupItem>Name: {this.props.name}</ListGroupItem>
+         <ListGroupItem>Age: {this.props.age}</ListGroupItem>
           <ListGroupItem>Location: {this.props.location}</ListGroupItem>
           <ListGroupItem>Course: {this.props.course}</ListGroupItem>
           <ListGroupItem>Interests: {this.props.interests}</ListGroupItem>
@@ -26,9 +26,17 @@ class UserWindow extends Component {
           <Button>Match With This Person</Button>
           </OverlayTrigger>
         </ListGroup>
-      </div>
+        
     )
+ 
+
+
+
+
+
+
   }
-}
+  }
 
 export default UserWindow;
+ 
