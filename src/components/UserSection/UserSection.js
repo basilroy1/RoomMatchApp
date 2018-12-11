@@ -17,11 +17,16 @@ class UserSection extends Component {
 
 
   handleChange =(e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  }
+    this.setState({ [e.target.name]: e.target.value});
+    }
+
   
- Submit =(e)=> {
+   Submit =(e)=> {
     e.preventDefault();
+    if(this.state.name==null||this.state.age==null||this.state.course==null||this.state.loaction==null||this.state.interests==null){
+      alert("enter all fields");
+      return;
+    }
     var ref=fire.database().ref('User'); 
     var newRef=ref.push();
     newRef.set({
@@ -157,6 +162,8 @@ class UserSection extends Component {
         document.getElementById("info").reset();//reset value after entered
         
     }
+  
+
 
 
 /*
