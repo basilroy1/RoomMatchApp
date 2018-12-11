@@ -10,9 +10,11 @@ class UserSection extends Component {
       age: "",
       course: "",
       location: "",
-      interests: ""
+      interests: "",
+      user: {}
     }
   }
+
 
   handleChange =(e) => {
     this.setState({ [e.target.name]: e.target.value });
