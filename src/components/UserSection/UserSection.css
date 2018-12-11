@@ -12,29 +12,41 @@
     margin-left: 400px;
     margin-bottom: 100px;     
     border-radius: 15px;
-    height: 800px;
+    height: 850px;
 }
 #header{
     text-align: center;
     font: 400 60px/2.2 'Great Vibes', Helvetica, sans-serif;
     color: #fff;
     text-shadow: 4px 4px 3px rgba(0,0,0,0.1);  
-
+}
+.alert {
+  padding: 20px;
+  color: black;
+  text-align:center;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
 }
 
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn:hover {
+  color: black;
+}
 #button{
     width: 112px;
     padding:12px;
     border-radius: 12px;
     margin-left:0px;
-}
-#b1{
-    background:url("forest.jpg");
-}
-#b2{
-    background:url("forest2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 
