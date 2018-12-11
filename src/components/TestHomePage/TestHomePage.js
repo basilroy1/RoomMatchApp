@@ -92,7 +92,7 @@ class TestHomePage extends Component {
 
         <button className="mainButtons" onClick={this.logout}>Logout</button> <br />
         <button className="mainButtons" onClick={this.handleDisplayUsers}>View Potential RoomMates</button> <br />
-        {!this.state.willDisplayProfile ?<button className="mainButtons" onClick={this.handleProfileDisplay}>Your Profile</button>: null} <br />
+        <button className="mainButtons" onClick={this.handleProfileDisplay}>Your Profile</button> <br />
         {this.state.willDisplayUsers ? <UserDisplaySection/>: null}
         {this.state.willDisplayProfile ? <UserSection /> : null}
         
