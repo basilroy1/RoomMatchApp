@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import fire from './config/fire';
 import Login from './components/Login/Login';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 49f7484a0f1ffe6a806bf712ae8e5bccdd42755f
  import UserSection from './components/UserSection/UserSection';
 
 import TestHomePage from './components/TestHomePage/TestHomePage';
@@ -35,7 +39,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.state.user ? (<UserSection />) : (<Login />)}
+        {this.state.user ? (<TestHomePage />) : (<Login />)}
       </div>
     );
   }

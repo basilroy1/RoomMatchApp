@@ -1,92 +1,101 @@
 import React, { Component } from 'react';
 import fire from '../../config/fire';
-import { Grid, Row, Col, Button } from 'react-bootstrap';
 import './TestHomePage.css';
-import UserWindow from '../UserWindow/UserWindow';
 import UserSection from '../UserSection/UserSection';
-
-
+import UserDisplaySection from '../UserDisplaySection/UserDisplaySection';
 
 class TestHomePage extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-
-      hardCodedPeople: [{name: "Evan", age: "20", location: "Parklands", course: "CSSE", interests: "Lorem"},{name: "Evan", age: "20", location: "Parklands", course: "CSSE", interests: "Lorem"},{name: "Evan", age: "20", location: "Parklands", course: "CSSE", interests: "Lorem"},{name: "Evan", age: "20", location: "Parklands", course: "CSSE", interests: "Lorem"}],
+    this.state = {    
+      willDisplayUsers : false,
+      willDisplayProfile : false,
+      isCurrentUserInDatabase: false,
+      isMounted: false,
       people: []
-
     }
   }
 
-  componentDidMount() {
-    const db = fire.database();
-    const ref = db.ref('User');
 
-    let currentState = this.state.people;
-    ref.on('value', (snapshot) => {
-      snapshot.forEach( (data) => {
-        const currentStudent = data.val();
-        let user ={
-          "name": currentStudent.Name,
-          "age": currentStudent.Age,
-          "location": currentStudent.Location,
-          "course": currentStudent.Course,
-          "interests": currentStudent.Interests
-        }
-        currentState.push(user);
+  // componentDidMount() {
+  //   this.authListener();
+  //   this.setState({
+  //     isMounted : true
+  //   });
+  // }
 
-      });
-    });
+  componentWillUnmount(){
 
-    this.setState({
-      people: currentState
-    });
-
-    console.log(this.state);
+    this.fireAuthListener = undefined;
 
   }
+
+  // authListener() {
+  //   this.fireAuthListener = fire.auth().onAuthStateChanged( (user) => {
+  //     if(user) {
+        
+  //       const currentUserId = fire.auth().currentUser.uid;
+  //       const db = fire.database();
+  //       const ref = db.ref();
+        
+  //       ref.child("User").orderByChild("Id").equalTo(currentUserId).once("value", snapshot => {
+  //         if(snapshot.val() != null){
+  //           this.preventProfileDisplay(); 
+  //         }
+  //       });
+
+  //     }
+
+  //   })
+  // }
+
+
+  // preventProfileDisplay = () => {
+
+  //   if(this.state.isMounted){
+  //     this.setState({
+  //       willDisplayProfile : false
+  //     });
+  //   }
+ 
+  // }
 
   logout = e => {
     e.preventDefault();
     fire.auth().signOut();
   }
 
+  handleDisplayUsers = e => {
+    e.preventDefault();
+    this.setState({
+      willDisplayUsers: !(this.state.willDisplayUsers),
+      
+    });
+  }
+
+  handleProfileDisplay = e => {
+    e.preventDefault();
+    this.setState({
+      willDisplayProfile: !(this.state.willDisplayProfile)
+    });
+  }
 
   render() {
 
-    let data = this.state.people;
-    // console.log(data);
-    let renderData = data.map((person) =>
-        <UserWindow
-          name = {person.name}
-          age = {person.age}
-          location = {person.location}
-          course = {person.course}
-          interests = {person.interests}
-        />
-
-    );
-
     return (
       <div>
+        <div className="headers">
+          <h1>RoomMatch</h1> <br />
+          <h3>Find your perfect RoomMate</h3> <br />
+        </div>
 
-        <Grid>
-          <Row>
-            <Col className="mainSection" xs={6} md={5}>
-            <Button onClick = {this.logout}>Logout</Button>
-              {renderData}
-            </Col>
-            <Col className="userSection" md={4}>
-              <UserSection />
-            </Col>
-          </Row>
-        </Grid>
-
-
-
-
-
+        <button className="mainButtons" onClick={this.logout}>Logout</button> <br />
+        <button className="mainButtons" onClick={this.handleDisplayUsers}>View Potential RoomMates</button> <br />
+        {!this.state.willDisplayProfile ?<button className="mainButtons" onClick={this.handleProfileDisplay}>Your Profile</button>: null} <br />
+        {this.state.willDisplayUsers ? <UserDisplaySection/>: null}
+        {this.state.willDisplayProfile ? <UserSection /> : null}
+        
       </div>
     );
   }
