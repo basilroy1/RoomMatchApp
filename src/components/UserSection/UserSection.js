@@ -11,22 +11,20 @@ class UserSection extends Component {
       course: "",
       location: "",
       interests: "",
-      user: {}
+      year: ""
     }
   }
-
-
   handleChange =(e) => {
     this.setState({ [e.target.name]: e.target.value});
     }
-
   
    Submit =(e)=> {
     e.preventDefault();
-    if(this.state.name==null||this.state.age==null||this.state.course==null||this.state.loaction==null||this.state.interests==null){
-      alert("enter all fields");
+    if(this.state.name=="" || this.state.age=="" || this.state.course=="" || this.state.location=="" || this.state.intrests==""||this.state.year==""){
+      alert("Please enter all fields");
       return;
     }
+    
     var ref=fire.database().ref('User'); 
     var newRef=ref.push();
     newRef.set({
@@ -35,17 +33,19 @@ class UserSection extends Component {
       Name: this.state.name,            /* This sends the values for profile info to the database*/
       Age: this.state.age,
       Course: this.state.course,
+      Year: this.state.year,
       Location: this.state.location,
       Interests: this.state.intrests 
+    
 });
-/*need to make Functionality for user filling all the fields before submitting*/
-     // var that=this;
+    
       ref.on("value",function(snapshot){
      
-        snapshot.forEach(function(data){
+      snapshot.forEach(function(data){
       var t={
       Name:data.val().Name,
       Age:data.val().Age,
+      Year:data.val().Year,
       Course:data.val().Course,
       Location:data.val().Location,
       Interests:data.val().Interests
@@ -55,6 +55,7 @@ class UserSection extends Component {
       var age=t.Age;
       var course=t.Course;
       var location=t.Location;
+      var year=t.Year;
       var intrests=t.Intrests;
       var r= document.getElementById("lol");
       console.log(name);
@@ -159,6 +160,14 @@ class UserSection extends Component {
           console.log(err);	
         }
         */
+        this.setState({
+        name: "",
+        age: "",
+        course: "",
+        year: "",
+        location: "",
+        interests: ""
+      });
         document.getElementById("info").reset();//reset value after entered
         
     }
@@ -183,17 +192,6 @@ var swap = window.setInterval(func, interval);
 
  
   render() {
-  /*
-const f=(
-openNav=()=> {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-<span  onclick={this.openNav}>open</span>
- closeNav=()=> {
-    document.getElementById("mySidenav").style.width = "0";
-}
-);//for slide nav bar
-*/
 
 return (
 
@@ -224,6 +222,12 @@ return (
     <label htmlfor="inputLocation" style={{color:"rgb(224, 224, 110)"}}>Location</label>
     <input onChange={this.handleChange} className="form-control" type="text" id="location" name="location" placeholder="Enter Location"/>
     {this.state.location ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Location</span>}
+
+  </div>
+  <div className="form-group">
+    <label htmlfor="inputYear" style={{color:"rgb(224, 224, 110)"}}>Year</label>
+    <input onChange={this.handleChange} className="form-control" type="text" id="year" name="year" placeholder="Enter College Year"/>
+    {this.state.year ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Year</span>}
 
   </div>
   <div className="form-row">
