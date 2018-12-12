@@ -217,10 +217,6 @@ return (
   
  <div >
 
-
-
-    <div className="container2">
-
  <div  >
   <Alert>
 
@@ -241,7 +237,7 @@ return (
 <h3 id="header">Profile Details</h3>
         
   <div className="form-row">
-    <div className="form-group col-md-6">
+    <div className="form-group col-md-6" id = "WineStyling">
       <label htmlfor="inputName" style={{color:"rgb(224, 224, 110)"}}>Name</label>
       <input onChange={this.handleChange} className="form-control" type="text" name="name" placeholder="Enter Name"/>
       {this.state.name ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
@@ -288,7 +284,7 @@ return (
 </div>
  </div>
  </div>
- </div>
+
 
     );
     
