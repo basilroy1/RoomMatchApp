@@ -69,7 +69,7 @@ class UserDisplaySection extends Component {
 
     let people = this.state.people;
     let renderData = people.map( (person) => 
-      <UserWindow key={person.id}
+      <UserWindow key= {person.id}
         email ={person.email}
         name = {person.name}
         age = {person.age}

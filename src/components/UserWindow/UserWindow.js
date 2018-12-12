@@ -24,6 +24,7 @@ class UserWindow extends Component {
   render() {
       
     return (
+
       <div className="userProfile">
         <h3 id="name">{this.props.name}</h3>
         <ul>
@@ -40,7 +41,15 @@ class UserWindow extends Component {
         {this.state.readMoreIsClicked ?<UserBio info = {this.props.email}/> : null}
       </div>
     )
+ 
+
+
+
+
+
+
   }
-}
+  }
 
 export default UserWindow;
+ 

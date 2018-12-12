@@ -2,21 +2,29 @@
     margin-left: 50px;
     margin-top: 0px;
     text-align:center;
+    font-family: "Raleway", sans-serif;
+    color: #ff8080;
 }
 .container2{
-    background-color: black;
+    
+    background-color: rgba(87, 15, 15, 0.7);
     opacity: 0.8;
     margin: 0 auto;
     width: 500px;
-    margin-top: 50px;
-    margin-left: 400px;
-    margin-bottom: 100px;     
+    margin-top: -200px;
+    margin-left: 500px;
+    margin-bottom: 50px;     
     border-radius: 15px;
+    padding: 20px 0;
+    height: 600px;
+    font-family: "Raleway", sans-serif;
+    color: #ff8080;
     height: 850px;
+
 }
 #header{
     text-align: center;
-    font: 400 60px/2.2 'Great Vibes', Helvetica, sans-serif;
+    font-family: "Raleway", sans-serif;
     color: #fff;
     text-shadow: 4px 4px 3px rgba(0,0,0,0.1);  
 }
