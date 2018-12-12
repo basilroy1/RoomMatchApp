@@ -26,7 +26,7 @@ class PasswordResetModal extends Component {
   sendPasswordReset = (e) => {
     fire.auth().sendPasswordResetEmail(this.state.email)
     .then( () => {
-      alert("We have sent you an email with instructions to reset your password!");
+      alert("We have sent you an email with instructions to reset your password");
     })
   }
 
@@ -55,7 +55,7 @@ class PasswordResetModal extends Component {
         <FormControl
             type="text"
             name="email"
-            placeholder="Enter your Maynooth Universiy email address!"
+            placeholder="Enter your Maynooth Universiy email address"
             onChange={this.handleChange}
         />
 

@@ -10,20 +10,28 @@ class UserSection extends Component {
       age: "",
       course: "",
       location: "",
-      interests: ""
+      interests: "",
+      user: {}
     }
   }
 
+
   handleChange =(e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  }
+    this.setState({ [e.target.name]: e.target.value});
+    }
+
   
- Submit =(e)=> {
+   Submit =(e)=> {
     e.preventDefault();
+    if(this.state.name==null||this.state.age==null||this.state.course==null||this.state.loaction==null||this.state.interests==null){
+      alert("enter all fields");
+      return;
+    }
     var ref=fire.database().ref('User'); 
     var newRef=ref.push();
     newRef.set({
       Id: fire.auth().currentUser.uid,
+      email: fire.auth().currentUser.email,
       Name: this.state.name,            /* This sends the values for profile info to the database*/
       Age: this.state.age,
       Course: this.state.course,
@@ -31,7 +39,7 @@ class UserSection extends Component {
       Interests: this.state.intrests 
 });
 /*need to make Functionality for user filling all the fields before submitting*/
-      var that=this;
+     // var that=this;
       ref.on("value",function(snapshot){
      
         snapshot.forEach(function(data){
@@ -65,12 +73,12 @@ class UserSection extends Component {
       var s4=document.createTextNode("Location : "+b4+' ');
       var s5=document.createTextNode("Intrests : "+b5+' ');
     
-      //r.appendChild(s);
+      /*r.appendChild(s);
       r.appendChild(s2);
       r.appendChild(s3);
       r.appendChild(s4);
       r.appendChild(s5);
-
+*/
       /*for(var i=0;i<b.length;i++){
         c++;
        var d= document.createTextNode(b[i]);
@@ -154,6 +162,8 @@ class UserSection extends Component {
         document.getElementById("info").reset();//reset value after entered
         
     }
+  
+
 
 
 /*
@@ -169,43 +179,63 @@ function func() {
 var swap = window.setInterval(func, interval);
 }
 */
+
+
+ 
   render() {
+  /*
+const f=(
+openNav=()=> {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+<span  onclick={this.openNav}>open</span>
+ closeNav=()=> {
+    document.getElementById("mySidenav").style.width = "0";
+}
+);//for slide nav bar
+*/
 
 return (
 
+//<<<<<<< HEAD
   
 
+// =======
+//>>>>>>> 87a214f6b00648c79a3fd8c8dfc6f5358254905f
     <div className="container2">
+   
+ 
+
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'></link>
-    <h3 id="header">Profile Details</h3>
+    
 <div className="form-group col-md-10">
 <form onSubmit={this.Submit} id="info">
+<h3 id="header">Profile Details</h3>
         
   <div className="form-row">
     <div className="form-group col-md-6">
       <label htmlfor="inputName" style={{color:"rgb(224, 224, 110)"}}>Name</label>
-      <input onChange={this.handleChange}  className="form-control" type="name" id="name" name="name" placeholder="Enter Name"/>
-      {this.state.name ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Name</span>}
-
+      <input onChange={this.handleChange} className="form-control" type="text" name="name" placeholder="Enter Name"/>
+      {this.state.name ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
     </div>
     <div className="form-group col-md-6">
       <label htmlfor="inputAge" style={{color:"rgb(224, 224, 110)"}}>Age</label>
-      <input onChange={this.handleChange} className="form-control" type="age" id="age" name="age" placeholder="Enter Age"/>
-      {this.state.age ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Age</span>}
+      <input onChange={this.handleChange} className="form-control" type="text" id="age" name="age" placeholder="Enter Age"/>
+      {this.state.age ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
 
     </div>
   </div>
   <div className="form-group">
     <label htmlfor="inputLocation" style={{color:"rgb(224, 224, 110)"}}>Location</label>
     <input onChange={this.handleChange} className="form-control" type="text" id="location" name="location" placeholder="Enter Location"/>
-    {this.state.location ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Location</span>}
+    {this.state.location ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
 
   </div>
   <div className="form-row">
   <div className="form-form-group col-md-6">
     <label htmlfor="inputCourse" style={{color:"rgb(224, 224, 110)"}}>Course</label>
     <input onChange={this.handleChange} className="form-control" type="text" id="course" name="course" placeholder="Enter Course"/>
-    {this.state.course ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Course</span>}
+    {this.state.course ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
 
   </div>
   
@@ -213,19 +243,23 @@ return (
     <div className="form-group col-md-6">
       <label htmlfor="inputIntrests" style={{color:"rgb(224, 224, 110)"}}>Interests</label>
       <input onChange={this.handleChange} className="form-control" type="text" name="intrests" id="intrests" placeholder="Enter Interests"/>
-      {this.state.intrests ? <span style={{color:"#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Interests</span>}
+      {this.state.intrests ? <span style={{color:"#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
     </div>
     </div>
 </div>
-<button className="btn btn-primary" type="submit"id="button" >Save</button>
+{/* <button className="btn btn-primary" type="submit"id="button" >Save</button> */}
+<a href="button" class="btn btn-primary btn-success"><span class="glyphicon glyphicon-floppy-disk"></span> Save Details</a>
 		</form>
     
-          
-          </div>
-          <div id="lol">
-         
-          </div>
-          </div>
+</div>
+     <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(4)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+    </div>
+ </div>
 
     )
   }
