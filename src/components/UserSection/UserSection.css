@@ -5,29 +5,40 @@
     font-family: "Raleway", sans-serif;
     color: #ff8080;
 }
-
-.container2 {
-
-    background-color: rgba(87, 15, 15, 0.7);
+.container2{
+    
+    background-color:rgba(87, 15, 15, 0.9);
     opacity: 0.8;
     margin: 0 auto;
     width: 500px;
     margin-top: 50px;
     margin-left: 400px;
+<<<<<<< HEAD
     margin-bottom: 100px;
     border-radius: 15px;
     /*padding: 20px 0;*/
     font-family: "Raleway", sans-serif;
     color: #ff8080;
+=======
+    margin-bottom: 100px;     
+    border-radius: 15px;
+>>>>>>> 72771ad548c6291636f45ef93eaca7782c5b0a6f
     height: 850px;
 
 }
-
-#header {
+#header{
+    background:yellow;
     text-align: center;
     font-family: "Raleway", sans-serif;
     color: #fff;
-    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
+    text-shadow: 4px 4px 3px rgba(0,0,0,0.1);  
+    padding: 10px 0;
+    width: 400px;
+    
+    margin: 0 auto;
+    
+    
+    
 }
 
 .alert {
@@ -60,4 +71,4 @@
     border-radius: 12px;
     margin-left: 0px;
 }
-
+    

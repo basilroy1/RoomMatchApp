@@ -35,6 +35,8 @@
   border-radius: 7px;
   margin: 1%;
   font-size: 1.3em;
+  margin-left: -120px;
+
 }
 
 .mainButtons:hover {
