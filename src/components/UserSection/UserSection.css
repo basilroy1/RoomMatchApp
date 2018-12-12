@@ -12,14 +12,11 @@
     opacity: 0.8;
     margin: 0 auto;
     width: 500px;
-    margin-top: -200px;
-    <<<<<<< HEAD margin-left: 400px;
+    margin-top: 50px;
+    margin-left: 400px;
     margin-bottom: 100px;
-    =======margin-left: 500px;
-    margin-bottom: 50px;
-    > > > > > > > 4cdda5ac262ad24c80cd878f3edc6d2bc0301aff border-radius: 15px;
-    padding: 20px 0;
-    height: 600px;
+    border-radius: 15px;
+    /*padding: 20px 0;*/
     font-family: "Raleway", sans-serif;
     color: #ff8080;
     height: 850px;
