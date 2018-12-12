@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fire from '../../config/fire';
 import './TestHomePage.css';
 import UserSection from '../UserSection/UserSection';
+import { Grid, Row, Col } from 'react-bootstrap';
 import UserDisplaySection from '../UserDisplaySection/UserDisplaySection';
 
 class TestHomePage extends Component {
@@ -23,13 +24,7 @@ class TestHomePage extends Component {
   //   this.setState({
   //     isMounted : true
   //   });
-  // }
-
-  componentWillUnmount(){
-
-    this.fireAuthListener = undefined;
-
-  }
+  //  }
 
   // authListener() {
   //   this.fireAuthListener = fire.auth().onAuthStateChanged( (user) => {
@@ -70,6 +65,7 @@ class TestHomePage extends Component {
     e.preventDefault();
     this.setState({
       willDisplayUsers: !(this.state.willDisplayUsers),
+      willDisplayProfile: this.state.willDisplayUsers
       
     });
   }
@@ -77,7 +73,8 @@ class TestHomePage extends Component {
   handleProfileDisplay = e => {
     e.preventDefault();
     this.setState({
-      willDisplayProfile: !(this.state.willDisplayProfile)
+      willDisplayProfile: !(this.state.willDisplayProfile),
+      willDisplayUsers: this.state.willDisplayProfile
     });
   }
 
@@ -85,18 +82,24 @@ class TestHomePage extends Component {
 
     return (
       <div>
-        <div className="headers" class="w3-display-middle w3-jumbo">
-          <h1>RoomMatch</h1> <br />
-          {/* <h3>Find your perfect RoomMate</h3> <br /> */}
-        </div>
+        <Grid>
+          <Row>
+            <Col md={2.5}>
+              <button className="mainButtons" onClick={this.logout}>Logout</button> <br />
+              <button className="mainButtons" onClick={this.handleDisplayUsers}>View Potential RoomMates</button> <br />
+              <button className="mainButtons" onClick={this.handleProfileDisplay}>Your Profile</button> <br />
+            </Col>
+            <Col md={9.5}>
+              <div className="headers">
+                <h1>RoomMatch</h1> <br/>
+              </div>  
+              {this.state.willDisplayUsers ? <UserDisplaySection/>: null}
+              {this.state.willDisplayProfile ? <UserSection /> : null}              
+            </Col>
+          </Row>
 
+        </Grid>
 
-
-        <button className="mainButtons" onClick={this.logout}>Logout</button> <br />
-        <button className="mainButtons" onClick={this.handleDisplayUsers}>View Potential RoomMates</button> <br />
-        <button className="mainButtons" onClick={this.handleProfileDisplay}>Your Profile</button> <br />
-        {this.state.willDisplayUsers ? <UserDisplaySection/>: null}
-        {this.state.willDisplayProfile ? <UserSection /> : null}
         
       </div>
     );
