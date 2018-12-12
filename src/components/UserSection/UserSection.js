@@ -219,7 +219,7 @@ return (
 
 
 
-    <div className="container2">
+    
 
  <div  >
   <Alert>
@@ -286,7 +286,6 @@ return (
 		</form>
     
 </div>
- </div>
  </div>
  </div>
 
