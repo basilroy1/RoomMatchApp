@@ -25,9 +25,13 @@ class UserDisplaySection extends Component {
     fire.auth().signOut();
   }
 
+  
+
   loadData = () => {
     const db = fire.database();
     const ref = db.ref('User');
+
+
 
     let currentState = this.state.people;
     ref.once('value', (snapshot) => {
@@ -38,6 +42,8 @@ class UserDisplaySection extends Component {
         const currentStudent = data.val();
         let user ={
           "email" : currentStudent.Email,
+          "year" : currentStudent.Year,
+          "id" : currentStudent.Id,
           "name": currentStudent.Name,
           "age": currentStudent.Age,
           "location": currentStudent.Location,
@@ -47,11 +53,11 @@ class UserDisplaySection extends Component {
         currentState.push(user);
 
       });
-
       this.setState({
         people: currentState,
         dataHasLoaded: true
       });
+      
 
       
     }); //callback end
@@ -63,18 +69,19 @@ class UserDisplaySection extends Component {
 
     let people = this.state.people;
     let renderData = people.map( (person) => 
-      <UserWindow 
+      <UserWindow key={person.id}
         email ={person.email}
         name = {person.name}
         age = {person.age}
         location = {person.location}
         course = {person.course}
         interests = {person.interests}
+        year = {person.year}
 
       />
     );
 
-    let loadingSpinner = <Loader id="loader" type="Plane" color="#ffffff" height="100" width="100" />
+    let loadingSpinner = <Loader id="loader" type="Plane" color="#570F0F " height="100" width="100" />
 
     
 

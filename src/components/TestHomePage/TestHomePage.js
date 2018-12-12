@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import fire from '../../config/fire';
 import './TestHomePage.css';
 import UserSection from '../UserSection/UserSection';
-import Loader from 'react-loader-spinner';
+import { Grid, Row, Col } from 'react-bootstrap';
 import UserDisplaySection from '../UserDisplaySection/UserDisplaySection';
 
 class TestHomePage extends Component {
@@ -24,13 +24,7 @@ class TestHomePage extends Component {
   //   this.setState({
   //     isMounted : true
   //   });
-  // }
-
-  componentWillUnmount(){
-
-    this.fireAuthListener = undefined;
-
-  }
+  //  }
 
   // authListener() {
   //   this.fireAuthListener = fire.auth().onAuthStateChanged( (user) => {
@@ -88,18 +82,24 @@ class TestHomePage extends Component {
 
     return (
       <div>
-        <div className="headers">
-          <h1>RoomMatch</h1> <br/>
-        </div>
-        
-        
+        <Grid>
+          <Row>
+            <Col md={2.5}>
+              <button className="mainButtons" onClick={this.logout}>Logout</button> <br />
+              <button className="mainButtons" onClick={this.handleDisplayUsers}>View Potential RoomMates</button> <br />
+              <button className="mainButtons" onClick={this.handleProfileDisplay}>Your Profile</button> <br />
+            </Col>
+            <Col md={9.5}>
+              <div className="headers">
+                <h1>RoomMatch</h1> <br/>
+              </div>  
+              {this.state.willDisplayUsers ? <UserDisplaySection/>: null}
+              {this.state.willDisplayProfile ? <UserSection /> : null}              
+            </Col>
+          </Row>
 
+        </Grid>
 
-        <button className="mainButtons" onClick={this.logout}>Logout</button> <br />
-        <button className="mainButtons" onClick={this.handleDisplayUsers}>View Potential RoomMates</button> <br />
-        <button className="mainButtons" onClick={this.handleProfileDisplay}>Your Profile</button> <br />
-        {this.state.willDisplayUsers ? <UserDisplaySection/>: null}
-        {this.state.willDisplayProfile ? <UserSection /> : null}
         
       </div>
     );

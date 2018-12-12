@@ -31,7 +31,9 @@ class UserWindow extends Component {
           <li className="listItem">Age: {this.props.age}</li>
           <li className="listItem">Location: {this.props.location}</li>
           <li className="listItem">Course: {this.props.course}</li>
+          <li className="listItem">Year: {this.props.year}</li>
           <li className="listItem">Interests: {this.props.interests}</li>
+
           
         </ul>
         <button id="moreInfoButton" onClick={this.handleClick}>More info</button>
