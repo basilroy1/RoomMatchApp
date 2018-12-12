@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import fire from '../../config/fire';
 import './UserSection.css';
+import { Alert } from 'react-bootstrap';
+
 class UserSection extends Component {
 
   constructor(props) {
@@ -11,17 +13,21 @@ class UserSection extends Component {
       course: "",
       location: "",
       interests: "",
-      user: {}
+      year: ""
     }
   }
-
-
   handleChange =(e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-  
- Submit =(e)=> {
+    this.setState({ [e.target.name]: e.target.value});
+    }
+
+   Submit =(e)=> {
     e.preventDefault();
+      if(this.state.name==="" || this.state.age==="" || this.state.course==="" || this.state.location==="" || this.state.intrests===""||this.state.year===""){
+  // //this.alert3;
+    alert("ERRor");
+      return;
+   }
+    
     var ref=fire.database().ref('User'); 
     var newRef=ref.push();
     newRef.set({
@@ -30,17 +36,19 @@ class UserSection extends Component {
       Name: this.state.name,            /* This sends the values for profile info to the database*/
       Age: this.state.age,
       Course: this.state.course,
+      Year: this.state.year,
       Location: this.state.location,
       Interests: this.state.intrests 
+    
 });
-/*need to make Functionality for user filling all the fields before submitting*/
-     // var that=this;
+    
       ref.on("value",function(snapshot){
      
-        snapshot.forEach(function(data){
+      snapshot.forEach(function(data){
       var t={
       Name:data.val().Name,
       Age:data.val().Age,
+      Year:data.val().Year,
       Course:data.val().Course,
       Location:data.val().Location,
       Interests:data.val().Interests
@@ -50,6 +58,7 @@ class UserSection extends Component {
       var age=t.Age;
       var course=t.Course;
       var location=t.Location;
+      var year=t.Year;
       var intrests=t.Intrests;
       var r= document.getElementById("lol");
       console.log(name);
@@ -59,8 +68,6 @@ class UserSection extends Component {
       var b3=React.Children.toArray(course);
       var b4=React.Children.toArray(location);
       var b5=React.Children.toArray(intrests);
-
-      //console.log(b[1]+" "+b2[1]+" "+b3[1]+" "+b4[1]+" "+b5[1]);
 
      // var s=document.createTextNode("Name : "+b+' ');
       var s2=document.createTextNode("Age : "+b2+' ');
@@ -154,9 +161,19 @@ class UserSection extends Component {
           console.log(err);	
         }
         */
+        this.setState({
+        name: "",
+        age: "",
+        course: "",
+        year: "",
+        location: "",
+        intrests: ""
+      });
         document.getElementById("info").reset();//reset value after entered
         
     }
+  
+
 
 
 /*
@@ -172,27 +189,46 @@ function func() {
 var swap = window.setInterval(func, interval);
 }
 */
+ 
+clickPopUp=()=>{
+      
+ var close = document.getElementsByClassName("closebtn");//need to hide this pop up a the begining
 
+  for (var i = 0; i < close.length; i++) {
+  // When someone clicks on a close button
+  close[i].onclick = function(){
 
+    // Get the parent of <span class="closebtn"> 
+    var div = this.parentElement;
+
+    // Set the opacity of div to 0 (transparent)
+    div.style.opacity = "0";
+
+    // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
+
+}
  
   render() {
-  /*
-const f=(
-openNav=()=> {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-<span  onclick={this.openNav}>open</span>
- closeNav=()=> {
-    document.getElementById("mySidenav").style.width = "0";
-}
-);//for slide nav bar
-*/
-
+    
 return (
+  
+ <div >
 
-    <div className="container2">
+ <div  >
+  <Alert>
+
+  <span className="closebtn" onClick={this.clickPopUp}>&times;</span>
    
- 
+  <h4 className="alert-heading"><strong>Well Done!</strong></h4>
+    <p>You successfully Created Your Profile.</p>
+  <h4/>
+      
+  </Alert>
+ </div>
+    <div className="container2">
 
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'></link>
     
@@ -219,6 +255,12 @@ return (
     {this.state.location ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Location</span>}
 
   </div>
+  <div className="form-group">
+    <label htmlfor="inputYear" style={{color:"rgb(224, 224, 110)"}}>Year</label>
+    <input onChange={this.handleChange} className="form-control" type="text" id="year" name="year" placeholder="Enter College Year"/>
+    {this.state.year ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Year</span>}
+
+  </div>
   <div className="form-row">
   <div className="form-form-group col-md-6">
     <label htmlfor="inputCourse" style={{color:"rgb(224, 224, 110)"}}>Course</label>
@@ -239,16 +281,10 @@ return (
 		</form>
     
 </div>
-     <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(4)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-    </div>
  </div>
-
-    )
+ </div>
+    );
+    
   }
 }
 export default UserSection;
