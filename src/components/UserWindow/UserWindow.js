@@ -27,13 +27,15 @@ class UserWindow extends Component {
       <div className="userProfile">
         <h3 id="name">{this.props.name}</h3>
         <ul>
+          
           <li className="listItem">Age: {this.props.age}</li>
           <li className="listItem">Location: {this.props.location}</li>
           <li className="listItem">Course: {this.props.course}</li>
+          <li className="listItem">Interests: {this.props.interests}</li>
           
         </ul>
         <button id="moreInfoButton" onClick={this.handleClick}>More info</button>
-        {this.state.readMoreIsClicked ?<UserBio info = {this.props.interests}/> : null}
+        {this.state.readMoreIsClicked ?<UserBio info = {this.props.email}/> : null}
       </div>
     )
   }

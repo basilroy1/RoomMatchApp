@@ -26,7 +26,7 @@ class UserSection extends Component {
     var newRef=ref.push();
     newRef.set({
       Id: fire.auth().currentUser.uid,
-      email: fire.auth().currentUser.email,
+      Email: fire.auth().currentUser.email,
       Name: this.state.name,            /* This sends the values for profile info to the database*/
       Age: this.state.age,
       Course: this.state.course,

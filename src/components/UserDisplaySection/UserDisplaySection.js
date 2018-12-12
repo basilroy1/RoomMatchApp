@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import fire from '../../config/fire';
+import Loader from 'react-loader-spinner';
 import UserWindow from '../UserWindow/UserWindow';
 
 
@@ -9,7 +10,8 @@ class UserDisplaySection extends Component {
 
     super(props);
     this.state = {
-      people: []
+      people: [],
+      dataHasLoaded: false
     }
 
   }
@@ -28,10 +30,14 @@ class UserDisplaySection extends Component {
     const ref = db.ref('User');
 
     let currentState = this.state.people;
-    ref.on('value', (snapshot) => {
+    ref.once('value', (snapshot) => {
+
+      //callback start
+
       snapshot.forEach( (data) => {
         const currentStudent = data.val();
         let user ={
+          "email" : currentStudent.Email,
           "name": currentStudent.Name,
           "age": currentStudent.Age,
           "location": currentStudent.Location,
@@ -41,13 +47,16 @@ class UserDisplaySection extends Component {
         currentState.push(user);
 
       });
-    });
 
-    this.setState({
-      people: currentState
-    });
+      this.setState({
+        people: currentState,
+        dataHasLoaded: true
+      });
 
-    console.log(this.state);
+      
+    }); //callback end
+
+
   }
 
   render() {
@@ -55,6 +64,7 @@ class UserDisplaySection extends Component {
     let people = this.state.people;
     let renderData = people.map( (person) => 
       <UserWindow 
+        email ={person.email}
         name = {person.name}
         age = {person.age}
         location = {person.location}
@@ -64,11 +74,13 @@ class UserDisplaySection extends Component {
       />
     );
 
+    let loadingSpinner = <Loader id="loader" type="Plane" color="#ffffff" height="100" width="100" />
+
     
 
     return (
       <div>
-        {renderData}
+        {this.state.dataHasLoaded ? renderData : loadingSpinner}
       </div>
     )
   }

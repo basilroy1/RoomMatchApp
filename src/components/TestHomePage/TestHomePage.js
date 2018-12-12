@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fire from '../../config/fire';
 import './TestHomePage.css';
 import UserSection from '../UserSection/UserSection';
+import Loader from 'react-loader-spinner';
 import UserDisplaySection from '../UserDisplaySection/UserDisplaySection';
 
 class TestHomePage extends Component {
@@ -70,6 +71,7 @@ class TestHomePage extends Component {
     e.preventDefault();
     this.setState({
       willDisplayUsers: !(this.state.willDisplayUsers),
+      willDisplayProfile: this.state.willDisplayUsers
       
     });
   }
@@ -77,7 +79,8 @@ class TestHomePage extends Component {
   handleProfileDisplay = e => {
     e.preventDefault();
     this.setState({
-      willDisplayProfile: !(this.state.willDisplayProfile)
+      willDisplayProfile: !(this.state.willDisplayProfile),
+      willDisplayUsers: this.state.willDisplayProfile
     });
   }
 
@@ -86,9 +89,11 @@ class TestHomePage extends Component {
     return (
       <div>
         <div className="headers">
-          <h1>RoomMatch</h1> <br />
-          <h3>Find your perfect RoomMate</h3> <br />
+          <h1>RoomMatch</h1> <br/>
         </div>
+        
+        
+
 
         <button className="mainButtons" onClick={this.logout}>Logout</button> <br />
         <button className="mainButtons" onClick={this.handleDisplayUsers}>View Potential RoomMates</button> <br />
