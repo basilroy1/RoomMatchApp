@@ -1,6 +1,6 @@
 #info {
     margin-left: 50px;
-    margin-top: 0px;
+    margin-top: 50px;
     text-align: center;
     font-family: "Raleway", sans-serif;
     color: #ff8080;
@@ -9,24 +9,22 @@
     
     background-color:rgba(87, 15, 15, 0.9);
     opacity: 0.8;
-    margin: 0 auto;
+    margin: auto;
     width: 500px;
     margin-top: 50px;
-    margin-left: 400px;
+   /* margin-left: 400px;*/
     margin-bottom: 100px;     
     border-radius: 15px;
-    height: 850px;
+    height: 800px;
 
 }
 #header{
-    background:yellow;
     text-align: center;
     font-family: "Raleway", sans-serif;
     color: #fff;
     text-shadow: 4px 4px 3px rgba(0,0,0,0.1);  
     padding: 10px 0;
     width: 400px;
-    
     margin: 0 auto;
     
     
@@ -57,9 +55,9 @@
     color: black;
 }
 
-#button {
+#btn {
     width: 112px;
-    padding: 12px;
+    padding: 15px;
     border-radius: 12px;
     margin-left: 0px;
 }
