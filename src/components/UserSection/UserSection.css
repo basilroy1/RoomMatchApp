@@ -1,25 +1,23 @@
-#info{
+#info {
     margin-left: 50px;
     margin-top: 0px;
-    text-align:center;
+    text-align: center;
     font-family: "Raleway", sans-serif;
     color: #ff8080;
 }
-.container2{
-    
+
+.container2 {
+
     background-color: rgba(87, 15, 15, 0.7);
     opacity: 0.8;
     margin: 0 auto;
     width: 500px;
     margin-top: -200px;
-<<<<<<< HEAD
-    margin-left: 400px;
-    margin-bottom: 100px;     
-=======
-    margin-left: 500px;
-    margin-bottom: 50px;     
->>>>>>> 4cdda5ac262ad24c80cd878f3edc6d2bc0301aff
-    border-radius: 15px;
+    <<<<<<< HEAD margin-left: 400px;
+    margin-bottom: 100px;
+    =======margin-left: 500px;
+    margin-bottom: 50px;
+    > > > > > > > 4cdda5ac262ad24c80cd878f3edc6d2bc0301aff border-radius: 15px;
     padding: 20px 0;
     height: 600px;
     font-family: "Raleway", sans-serif;
@@ -27,39 +25,53 @@
     height: 850px;
 
 }
-#header{
+
+#header {
     text-align: center;
     font-family: "Raleway", sans-serif;
     color: #fff;
-    text-shadow: 4px 4px 3px rgba(0,0,0,0.1);  
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
 }
+
 .alert {
-  padding: 20px;
-  color: black;
-  text-align:center;
-  opacity: 1;
-  transition: opacity 0.6s;
-  margin-bottom: 15px;
+    padding: 20px;
+    color: black;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
 }
 
 .closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
 }
+
 .closebtn:hover {
-  color: black;
+    color: black;
 }
-#button{
+
+#button {
     width: 112px;
-    padding:12px;
+    padding: 12px;
     border-radius: 12px;
-    margin-left:0px;
+    margin-left: 0px;
 }
 
+#WineStyling {
+    padding: 0.5%, 1%, 0.5%, 1%;
+    background: rgba(87, 15, 15, 0.9);
+    color: aliceblue;
+    border-radius: 7px;
+    margin: 1%;
+    font-size: 1.3em;
+    
 
+
+}
