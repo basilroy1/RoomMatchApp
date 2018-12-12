@@ -7,7 +7,7 @@
 }
 .container2{
     
-    background-color: rgba(87, 15, 15, 0.7);
+    background-color:rgba(87, 15, 15, 0.9);
     opacity: 0.8;
     margin: 0 auto;
     width: 500px;
@@ -15,18 +15,21 @@
     margin-left: 500px;
     margin-bottom: 50px;     
     border-radius: 15px;
-    padding: 20px 0;
-    height: 600px;
-    font-family: "Raleway", sans-serif;
-    color: #ff8080;
-    height: 850px;
+    height: 650px;
 
 }
 #header{
+    background: #660003;
     text-align: center;
     font-family: "Raleway", sans-serif;
     color: #fff;
     text-shadow: 4px 4px 3px rgba(0,0,0,0.1);  
+    padding: 10px 0;
+    width: 100%;
+    margin: 0 auto;
+    
+    
+    
 }
 .alert {
   padding: 20px;
