@@ -24,6 +24,7 @@ class UserWindow extends Component {
   render() {
       
     return (
+
       <div className="userProfile">
         <h3 id="name">{this.props.name}</h3>
         <ul>
@@ -35,8 +36,17 @@ class UserWindow extends Component {
         <button id="moreInfoButton" onClick={this.handleClick}>More info</button>
         {this.state.readMoreIsClicked ?<UserBio info = {this.props.interests}/> : null}
       </div>
+ //87a214f6b00648c79a3fd8c8dfc6f5358254905f
     )
+ 
+
+
+
+
+
+
   }
-}
+  }
 
 export default UserWindow;
+ 

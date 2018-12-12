@@ -85,10 +85,12 @@ class TestHomePage extends Component {
 
     return (
       <div>
-        <div className="headers">
+        <div className="headers" class="w3-display-middle w3-jumbo">
           <h1>RoomMatch</h1> <br />
-          <h3>Find your perfect RoomMate</h3> <br />
+          {/* <h3>Find your perfect RoomMate</h3> <br /> */}
         </div>
+
+
 
         <button className="mainButtons" onClick={this.logout}>Logout</button> <br />
         <button className="mainButtons" onClick={this.handleDisplayUsers}>View Potential RoomMates</button> <br />
