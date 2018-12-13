@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import fire from './config/fire';
 import Login from './components/Login/Login';
+<<<<<<< HEAD
+=======
+
+
+ 
+
+>>>>>>> 5356f00ec68cdd67eb8753dcd29ae94512a5bdc5
 import TestHomePage from './components/TestHomePage/TestHomePage';
 
 const http = require("http");

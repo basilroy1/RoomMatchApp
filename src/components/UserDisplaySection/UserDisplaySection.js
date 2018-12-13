@@ -88,7 +88,7 @@ class UserDisplaySection extends Component {
 
     return (
       <div>
-        {this.state.dataHasLoaded ? renderData : loadingSpinner}
+           {this.state.dataHasLoaded ? renderData : loadingSpinner}
       </div>
     )
   }
