@@ -1,64 +1,8 @@
-
-.userProfile {
-
- background: rgba(87, 15, 15, 0.7);
- color: #eee;
- text-align: center;
- border: 1px solid #eee;
- vertical-align: middle;
- padding: 2.5%;
- border-radius: 10px;
- margin: 1% 25% 1% 25%;
- box-shadow: 1px 1px 5px #eee inset;  
- font-family: "Raleway", sans-serif;
-
-  
-}
-
-#moreInfoButton {
-  
-  border: none;
-  border-radius: 10px;
-  padding: 2%;
-  background: #5cb85c;
-}
-
-#moreInfoButton:hover{
-  color: white;
-  background: #428bca;
-}
-
-.mainButtons {
-  padding: 0.5% 1% 0.5% 1%;
-  background: rgba(87, 15, 15, 0.9);
-  color: #eee;
-  border-radius: 7px;
-  margin: 1%;
-  font-size: 1.3em;
-  margin-left: -110px;
-
-}
-
-.mainButtons:hover {
-  padding: 0.5% 1% 0.5% 1%;
-  color: rgba(87, 15, 15, 0.99);
-  font-weight: bold;
-  font-size: 1.4em;
-  background: #eee;
-  border-radius: 7px;
-
-}
-
-
-
-
-#name {
-
-  font-weight: bold;
-  color: #eee;
-
-}
-
-ul {
-  list-style: none;
+body,h1,h5 {font-family: "Raleway", sans-serif} 
+body, html {height: 100%}
+.bgimg {
+    background-image: url("background1.jpg");
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
 }

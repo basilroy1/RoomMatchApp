@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import UserBio from '../UserBio/UserBio';
-import './userWindow.css';
+import './UserWindow.css';
 class UserWindow extends Component {
 
   constructor(props) {
