@@ -1,21 +1,28 @@
+
+
 #info {
     margin-left: 50px;
     margin-top: 50px;
     text-align: center;
-    font-family: "Raleway", sans-serif;
-    color: #ff8080;
+    font-family: Courier New, monospace;
 }
 .container2{
     
-    background-color:rgba(87, 15, 15, 0.9);
+    background-color:rgba(87, 15, 15, 0.9);;
     opacity: 0.8;
     margin: auto;
     width: 500px;
+<<<<<<< HEAD
+    margin-top: 40px;
+    margin-left: 400px;
+    margin-bottom: 100px;     
+=======
     margin-top: 50px;
 
    /* margin-left: 400px;*/
 
     margin-bottom: 100px;
+>>>>>>> 5356f00ec68cdd67eb8753dcd29ae94512a5bdc5
     border-radius: 15px;
     font-family: "Raleway", sans-serif;
     color: #ff8080;   
@@ -23,14 +30,31 @@
 
 }
 #header{
+<<<<<<< HEAD
+     background:#640303;
+=======
+>>>>>>> 5356f00ec68cdd67eb8753dcd29ae94512a5bdc5
     text-align: center;
-    font-family: "Raleway", sans-serif;
+    font-family:Courier New, monospace;;
     color: #fff;
     text-shadow: 4px 4px 3px rgba(0,0,0,0.1);  
+<<<<<<< HEAD
+    padding: 15px 0;
+    margin: 0px -70px -16px -60px; 
+    /* background: #43D1AF;
+	padding: 40px 0;
+	font-size: 140%;
+	font-weight: 300;
+	text-align: center;
+	color: #fff;
+	margin: -20px -16px 16px -16px;
+     */
+=======
     padding: 10px 0;
     width: 400px;
     margin: 0 auto;
     
+>>>>>>> 5356f00ec68cdd67eb8753dcd29ae94512a5bdc5
     
     
 }

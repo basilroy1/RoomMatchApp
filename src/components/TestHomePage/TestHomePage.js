@@ -4,6 +4,8 @@ import './TestHomePage.css';
 import UserSection from '../UserSection/UserSection';
 import { Grid, Row, Col } from 'react-bootstrap';
 import UserDisplaySection from '../UserDisplaySection/UserDisplaySection';
+//import React from 'react'
+
 
 class TestHomePage extends Component {
 
@@ -91,7 +93,9 @@ class TestHomePage extends Component {
             </Col>
             <Col md={9.5}>
               <div className="headers">
-                <h1>RoomMatch</h1> <br/>
+              <h1>RoomMatch</h1> <br/>
+              <h2><small>Helping you find your Perfect HouseMate</small></h2> <br/>
+
               </div>  
               {this.state.willDisplayUsers ? <UserDisplaySection/>: null}
               {this.state.willDisplayProfile ? <UserSection /> : null}              

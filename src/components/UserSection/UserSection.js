@@ -223,26 +223,14 @@ clickPopUp=()=>{
 return (
   
  <div >
-<<<<<<< HEAD
-      <div className="container2">
-=======
 
- <div  >
-
->>>>>>> 5356f00ec68cdd67eb8753dcd29ae94512a5bdc5
   <Alert>
     <span className="closebtn" onClick={this.clickPopUp}>&times;</span>
    
-<<<<<<< HEAD
-    <h4 className="alert-heading"><strong>Well Done!</strong></h4>
-      <p>You successfully Created Your Profile.</p>
-    <h4/>
-=======
   <h4 className="alert-heading"><strong>Well Done!</strong></h4>
    <hr className="w3-border-black"/>
     <p>You successfully Created Your Profile.</p>
   <h4/>
->>>>>>> 5356f00ec68cdd67eb8753dcd29ae94512a5bdc5
       
   </Alert>
      
@@ -254,18 +242,6 @@ return (
     <form onSubmit={this.Submit} id="info">
     <h3 id="header">Profile Details</h3>
         
-<<<<<<< HEAD
-
-    <div className="form-row">
-      
-      <div className="form-group col-md-6">
-        <label htmlFor="inputName" style={{color:"rgb(224, 224, 110)"}}>Upload Your Profile Picture</label>
-        <input onChange={this.fileChangedHandler} className="form-control"  type="file" name="profilePicture"/>
-        {this.state.profilePicture ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
-      </div>
-
-      <div className="form-row">
-=======
   <div className="form-row">
     <div className="form-group col-md-6" >
       <label htmlfor="inputName" style={{color:"rgb(224, 224, 110)"}}>Name</label>
@@ -283,7 +259,6 @@ return (
     <label htmlfor="inputLocation" style={{color:"rgb(224, 224, 110)"}}>Location</label>
     <input onChange={this.handleChange} className="form-control" type="text" id="location" name="location" placeholder="Enter Location"/>
     {this.state.location ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Location</span>}
->>>>>>> 5356f00ec68cdd67eb8753dcd29ae94512a5bdc5
 
         <div className="form-group col-md-6">
           <label htmlFor="inputName" style={{color:"rgb(224, 224, 110)"}}>Name</label>
@@ -311,33 +286,15 @@ return (
           {this.state.year ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Year</span>}
         </div>
 
-<<<<<<< HEAD
-      <div className="form-row">
-        <div className="form-form-group col-md-6">
-          <label htmlfor="inputCourse" style={{color:"rgb(224, 224, 110)"}}>Course</label>
-          <input onChange={this.handleChange} className="form-control" type="text" id="course" name="course" placeholder="Enter Course"/>
-          {this.state.course ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
-        </div>
-=======
-  </div>
+  
   <div className="form-row">
   <div className="form-form-group col-md-6">
     <label htmlfor="inputCourse" style={{color:"rgb(224, 224, 110)"}}>Course</label>
     <input onChange={this.handleChange} className="form-control" type="text" id="course" name="course" placeholder="Enter Course"/>
     {this.state.course ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Course</span>}
->>>>>>> 5356f00ec68cdd67eb8753dcd29ae94512a5bdc5
 
       </div>
   
-<<<<<<< HEAD
-      <div className="form-row">
-        <div className="form-group col-md-6">
-          <label htmlfor="inputIntrests" style={{color:"rgb(224, 224, 110)"}}>Interests</label>
-          <input onChange={this.handleChange} className="form-control" type="text" name="intrests" id="intrests" placeholder="Enter Interests"/>
-          {this.state.intrests ? <span style={{color:"#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
-        </div>
-      </div>
-=======
   <div className="form-row">
     <div className="form-group col-md-6">
       <label htmlfor="inputIntrests" style={{color:"rgb(224, 224, 110)"}}>Interests</label>
@@ -345,7 +302,6 @@ return (
       {this.state.intrests ? <span style={{color:"#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Interests</span>}
     </div>
     </div>
->>>>>>> 5356f00ec68cdd67eb8753dcd29ae94512a5bdc5
 </div>
  <button className="btn btn-primary btn-success" type="submit"id="btn"><span class="glyphicon glyphicon-floppy-disk"></span> Save Details</button> 
 
