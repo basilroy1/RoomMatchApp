@@ -87,9 +87,10 @@ class TestHomePage extends Component {
         <Grid>
           <Row>
             <Col md={2.5}>
-              <button className="mainButtons" onClick={this.logout}>Logout</button> <br />
-              <button className="mainButtons" onClick={this.handleDisplayUsers}>View Potential RoomMates</button> <br />
-              <button className="mainButtons" onClick={this.handleProfileDisplay}>Your Profile</button> <br />
+              <button className="mainButtons" onClick={this.logout}><span class="glyphicon glyphicon-log-out"></span> Logout</button> <br />
+              <button className="mainButtons" onClick={this.handleDisplayUsers}><span class="glyphicon glyphicon-eye-open"></span> View Potential RoomMates</button> <br />
+              <button className="mainButtons" onClick={this.handleProfileDisplay}><span class="glyphicon glyphicon-user"></span> Your Profile</button> <br />
+              
             </Col>
             <Col md={9.5}>
               <div className="headers">
