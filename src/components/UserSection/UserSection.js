@@ -260,7 +260,7 @@ return (
     <input onChange={this.handleChange} className="form-control" type="text" id="location" name="location" placeholder="Enter Location"/>
     {this.state.location ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Location</span>}
 
-        <div className="form-group col-md-6">
+         <div className="form-group col-md-6">
           <label htmlFor="inputName" style={{color:"rgb(224, 224, 110)"}}>Name</label>
           <input onChange={this.handleChange} className="form-control" type="text" name="name" placeholder="Enter Name"/>
           {this.state.name ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
@@ -270,15 +270,15 @@ return (
           <label htmlfor="inputAge" style={{color:"rgb(224, 224, 110)"}}>Age</label>
           <input onChange={this.handleChange} className="form-control" type="text" id="age" name="age" placeholder="Enter Age"/>
           {this.state.age ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
-        </div>
+        </div> 
 
       </div>
 
-        <div className="form-group">
+         <div className="form-group">
           <label htmlfor="inputLocation" style={{color:"rgb(224, 224, 110)"}}>Location</label>
           <input onChange={this.handleChange} className="form-control" type="text" id="location" name="location" placeholder="Enter Location"/>
           {this.state.location ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
-        </div>
+        </div>  
     
         <div className="form-group">
           <label htmlfor="inputYear" style={{color:"rgb(224, 224, 110)"}}>Year</label>
