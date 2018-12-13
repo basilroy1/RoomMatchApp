@@ -13,12 +13,20 @@ class UserSection extends Component {
       course: "",
       location: "",
       interests: "",
-      year: ""
+      year: "",
+      profilePicture: 1
     }
   }
   handleChange =(e) => {
     this.setState({ [e.target.name]: e.target.value});
-    }
+  }
+
+  fileChangedHandler = e => {
+    e.preventDefault();
+    const file = e.target.files[0];
+    this.setState({profilePicture: file});
+    console.log(this.state.profilePicture);
+  }
 
    Submit =(e)=> {
     e.preventDefault();
@@ -216,70 +224,77 @@ clickPopUp=()=>{
 return (
   
  <div >
-
-
-
-    <div className="container2">
-
- <div  >
+      <div className="container2">
   <Alert>
-
-  <span className="closebtn" onClick={this.clickPopUp}>&times;</span>
+    <span className="closebtn" onClick={this.clickPopUp}>&times;</span>
    
-  <h4 className="alert-heading"><strong>Well Done!</strong></h4>
-    <p>You successfully Created Your Profile.</p>
-  <h4/>
+    <h4 className="alert-heading"><strong>Well Done!</strong></h4>
+      <p>You successfully Created Your Profile.</p>
+    <h4/>
       
   </Alert>
- </div>
+     
     <div className="container2">
 
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'></link>
     
-<div className="form-group col-md-10">
-<form onSubmit={this.Submit} id="info">
-<h3 id="header">Profile Details</h3>
+    <div className="form-group col-md-10">
+    <form onSubmit={this.Submit} id="info">
+    <h3 id="header">Profile Details</h3>
         
-  <div className="form-row">
-    <div className="form-group col-md-6">
-      <label htmlfor="inputName" style={{color:"rgb(224, 224, 110)"}}>Name</label>
-      <input onChange={this.handleChange} className="form-control" type="text" name="name" placeholder="Enter Name"/>
-      {this.state.name ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
-    </div>
-    <div className="form-group col-md-6">
-      <label htmlfor="inputAge" style={{color:"rgb(224, 224, 110)"}}>Age</label>
-      <input onChange={this.handleChange} className="form-control" type="text" id="age" name="age" placeholder="Enter Age"/>
-      {this.state.age ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
 
-    </div>
-  </div>
-  <div className="form-group">
-    <label htmlfor="inputLocation" style={{color:"rgb(224, 224, 110)"}}>Location</label>
-    <input onChange={this.handleChange} className="form-control" type="text" id="location" name="location" placeholder="Enter Location"/>
-    {this.state.location ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
+    <div className="form-row">
+      
+      <div className="form-group col-md-6">
+        <label htmlFor="inputName" style={{color:"rgb(224, 224, 110)"}}>Upload Your Profile Picture</label>
+        <input onChange={this.fileChangedHandler} className="form-control"  type="file" name="profilePicture"/>
+        {this.state.profilePicture ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
+      </div>
 
-  </div>
-  <div className="form-group">
-    <label htmlfor="inputYear" style={{color:"rgb(224, 224, 110)"}}>Year</label>
-    <input onChange={this.handleChange} className="form-control" type="text" id="year" name="year" placeholder="Enter College Year"/>
-    {this.state.year ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Year</span>}
+      <div className="form-row">
 
-  </div>
-  <div className="form-row">
-  <div className="form-form-group col-md-6">
-    <label htmlfor="inputCourse" style={{color:"rgb(224, 224, 110)"}}>Course</label>
-    <input onChange={this.handleChange} className="form-control" type="text" id="course" name="course" placeholder="Enter Course"/>
-    {this.state.course ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
+        <div className="form-group col-md-6">
+          <label htmlFor="inputName" style={{color:"rgb(224, 224, 110)"}}>Name</label>
+          <input onChange={this.handleChange} className="form-control" type="text" name="name" placeholder="Enter Name"/>
+          {this.state.name ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
+        </div>
 
-  </div>
+        <div className="form-group col-md-6">
+          <label htmlfor="inputAge" style={{color:"rgb(224, 224, 110)"}}>Age</label>
+          <input onChange={this.handleChange} className="form-control" type="text" id="age" name="age" placeholder="Enter Age"/>
+          {this.state.age ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
+        </div>
+
+      </div>
+
+        <div className="form-group">
+          <label htmlfor="inputLocation" style={{color:"rgb(224, 224, 110)"}}>Location</label>
+          <input onChange={this.handleChange} className="form-control" type="text" id="location" name="location" placeholder="Enter Location"/>
+          {this.state.location ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
+        </div>
+    
+        <div className="form-group">
+          <label htmlfor="inputYear" style={{color:"rgb(224, 224, 110)"}}>Year</label>
+          <input onChange={this.handleChange} className="form-control" type="text" id="year" name="year" placeholder="Enter College Year"/>
+          {this.state.year ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}>Please Enter Year</span>}
+        </div>
+
+      <div className="form-row">
+        <div className="form-form-group col-md-6">
+          <label htmlfor="inputCourse" style={{color:"rgb(224, 224, 110)"}}>Course</label>
+          <input onChange={this.handleChange} className="form-control" type="text" id="course" name="course" placeholder="Enter Course"/>
+          {this.state.course ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
+        </div>
+
+      </div>
   
-  <div className="form-row">
-    <div className="form-group col-md-6">
-      <label htmlfor="inputIntrests" style={{color:"rgb(224, 224, 110)"}}>Interests</label>
-      <input onChange={this.handleChange} className="form-control" type="text" name="intrests" id="intrests" placeholder="Enter Interests"/>
-      {this.state.intrests ? <span style={{color:"#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
-    </div>
-    </div>
+      <div className="form-row">
+        <div className="form-group col-md-6">
+          <label htmlfor="inputIntrests" style={{color:"rgb(224, 224, 110)"}}>Interests</label>
+          <input onChange={this.handleChange} className="form-control" type="text" name="intrests" id="intrests" placeholder="Enter Interests"/>
+          {this.state.intrests ? <span style={{color:"#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
+        </div>
+      </div>
 </div>
 {/* <button className="btn btn-primary" type="submit"id="button" >Save</button> */}
 <a href="button" class="btn btn-primary btn-success"><span class="glyphicon glyphicon-floppy-disk"></span> Save Details</a>

@@ -2,15 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import fire from './config/fire';
 import Login from './components/Login/Login';
-<<<<<<< HEAD
-=======
-
-
- 
-
->>>>>>> 4cdda5ac262ad24c80cd878f3edc6d2bc0301aff
 import TestHomePage from './components/TestHomePage/TestHomePage';
 
+const http = require("http");
 class App extends Component {
 
   constructor(props) {

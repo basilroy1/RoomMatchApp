@@ -40,7 +40,7 @@ class UserDisplaySection extends Component {
 
       snapshot.forEach( (data) => {
         const currentStudent = data.val();
-        let user ={
+        let user = {
           "email" : currentStudent.Email,
           "year" : currentStudent.Year,
           "id" : currentStudent.Id,
@@ -53,6 +53,7 @@ class UserDisplaySection extends Component {
         currentState.push(user);
 
       });
+
       this.setState({
         people: currentState,
         dataHasLoaded: true
@@ -81,7 +82,7 @@ class UserDisplaySection extends Component {
       />
     );
 
-    let loadingSpinner = <Loader id="loader" type="Plane" color="#570F0F " height="100" width="100" />
+    let loadingSpinner = <Loader id="loader" type="Plane" color="#570F0F " height="100" width="100" />;
 
     
 
