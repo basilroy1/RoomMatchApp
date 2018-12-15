@@ -80,6 +80,7 @@ class UserDisplaySection extends Component {
         year = {person.year}
 
       />
+      
     );
 
     let loadingSpinner = <Loader id="loader" type="Plane" color="#570F0F " height="100" width="100" />;

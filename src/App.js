@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import fire from './config/fire';
 import Login from './components/Login/Login';
-import TestHomePage from './components/TestHomePage/TestHomePage';
+import Home from './components/Home/Home';
 
-const http = require("http");
 class App extends Component {
 
   constructor(props) {
@@ -34,7 +33,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.state.user ? (<TestHomePage />) : (<Login />)}
+        {this.state.user ? (<Home />) : (<Login />)}
       </div>
     );
   }
