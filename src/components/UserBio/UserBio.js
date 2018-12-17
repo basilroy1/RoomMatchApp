@@ -4,7 +4,7 @@ class UserBio extends Component {
   render() {
     return (
       <div>
-        {this.props.info}
+        {this.props.email}
       </div>
     )
   }

@@ -1,25 +1,47 @@
 
-.userProfile {
 
- background: rgba(87, 15, 15, 0.7);
- color: #eee;
- text-align: center;
- border: 1px solid #eee;
- vertical-align: middle;
- padding: 2.5%;
- border-radius: 10px;
- margin: 1% 25% 1% 25%;
- box-shadow: 1px 1px 5px #eee inset;  
- font-family: "Raleway", sans-serif;
+.wrapper {
 
-  
+  background: #FDFEFF;
+  margin: 1% 30% 1% 30%;
+	border-radius: 10px;
+	padding: 20px 20px 20px 20px;
+  box-shadow: 0px 0.6em 0.7em grey;
+  text-align: center;
 }
 
+
+.profilePicture {
+  width: 300px;
+  height: 300px;
+  object-fit: scale-down;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  border-radius: 100%;
+  box-shadow: 0px 0.6em 0.7em grey;
+}
+
+.title {
+  font-size: 2em;
+  color: #7c8097;
+}
+.subTitle {
+  font-size: 1.6em;
+}
+
+.bio {
+  font-size: 1.4em;
+}
+
+
+
 #moreInfoButton {
-  
+
   border: none;
   border-radius: 10px;
-  padding: 2%;
+  padding: 4%;
   background: #5cb85c;
 }
 
@@ -34,9 +56,9 @@
   color: #eee;
   border-radius: 7px;
   margin: 1%;
-  font-family: Courier New, monospace;
+  font-family: Courier, monospace;
   font-size: 1.3em;
-  margin-left: -110px;
+  margin-left: 1%;
 
 }
 
@@ -46,20 +68,16 @@
   font-weight: bold;
   font-size: 1.4em;
   background: #eee;
-  border-radius: 7px;
+  border-radius: 7px; 
 
 }
-
-
-
 
 #name {
 
-  font-weight: bold;
-  color: #eee;
+  color: #2d354a;
+  font-size: 2.7em;
+  font-weight: 600;
+  text-align: center;
 
-}
 
-ul {
-  list-style: none;
 }

@@ -21,33 +21,32 @@ class UserWindow extends Component {
 
 
 
+
   render() {
-      
+    const emailPopUp = () => 
+    <p className="email">{this.props.email}</p>
+    ;
+
+
     return (
 
-      <div className="userProfile">
-        <h3 id="name">{this.props.name}</h3>
-        <ul>
-          
-          <li className="listItem">Age: {this.props.age}</li>
-          <li className="listItem">Location: {this.props.location}</li>
-          <li className="listItem">Course: {this.props.course}</li>
-          <li className="listItem">Year: {this.props.year}</li>
-          <li className="listItem">Interests: {this.props.interests}</li>
+      <div className="wrapper">
+        <div className="profile">
+          <img className="profilePicture" src={this.props.imageAsBase64}></img>
+            <h3 id="name">{this.props.name} , {this.props.age}</h3>
+            <p className="title">{this.props.course}</p>
+            <p className="subTitle">{this.props.year} Year</p>
+            <div className="bio">
+              <p className="description"><strong>Interests: </strong>{this.props.interests}</p>
+              <p className="location"><strong>Location: </strong>{this.props.location}</p>
+              <button type="button" id="moreInfoButton" onClick={this.handleClick}>Email Me</button>
+              {this.state.readMoreIsClicked ?  <UserBio id = "email" email = {this.props.email} /> : null}
+            </div>
 
-          
-        </ul>
-        <button id="moreInfoButton" onClick={this.handleClick}>More info</button>
-        {this.state.readMoreIsClicked ?<UserBio info = {this.props.email}/> : null}
+        </div>
+
       </div>
     )
- 
-
-
-
-
-
-
   }
   }
 
