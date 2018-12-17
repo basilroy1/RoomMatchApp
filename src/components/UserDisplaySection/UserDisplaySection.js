@@ -48,7 +48,8 @@ class UserDisplaySection extends Component {
           "age": currentStudent.Age,
           "location": currentStudent.Location,
           "course": currentStudent.Course,
-          "interests": currentStudent.Interests
+          "interests": currentStudent.Interests,
+          "imageAsBase64" : currentStudent.ProfilePicture
         }
         currentState.push(user);
 
@@ -78,6 +79,7 @@ class UserDisplaySection extends Component {
         course = {person.course}
         interests = {person.interests}
         year = {person.year}
+        imageAsBase64 = {person.imageAsBase64}
 
       />
       
