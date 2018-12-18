@@ -14,6 +14,7 @@ class UserSection extends Component {
       location: "",
       interests: "",
       year: "",
+      clickPopUp: false,
       profilePicture: 1
     }
   }
@@ -27,6 +28,7 @@ class UserSection extends Component {
     this.setState({profilePicture: file});
     console.log(this.state.profilePicture);
   }
+
 
    Submit =(e)=> {
     e.preventDefault();
@@ -197,8 +199,11 @@ var swap = window.setInterval(func, interval);
 }
 */
  
-clickPopUp=()=>{
-      
+clickPopUp=(e)=>{
+  e.preventDefault();
+  this.setState({
+    clickPopUp: !(this.state.clickPopUp)
+  });
  var close = document.getElementsByClassName("closebtn");//need to hide this pop up a the begining
 
   for (var i = 0; i < close.length; i++) {
