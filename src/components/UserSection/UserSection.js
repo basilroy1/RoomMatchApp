@@ -34,7 +34,11 @@ class UserSection extends Component {
     e.preventDefault();
       if(this.state.name==="" || this.state.age==="" || this.state.course==="" || this.state.location==="" || this.state.intrests===""||this.state.year===""){
     alert("ERRor");
+<<<<<<< HEAD
       return; 
+=======
+      return;
+>>>>>>> 235e0fd23e545b4e4b319f6aca1467140eae956e
    }
     
     var ref=fire.database().ref('User'); 
