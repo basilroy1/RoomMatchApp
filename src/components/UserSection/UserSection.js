@@ -15,7 +15,11 @@ class UserSection extends Component {
       interests: "",
       year: "",
       profilePicture: 1,
+<<<<<<< HEAD
       userHasSubmitted: false
+=======
+      willDisplay:false
+>>>>>>> 7dfbac44eb3731cac95e0b9daaf6aefdf0d71c38
     }
   }
 
@@ -55,9 +59,15 @@ class UserSection extends Component {
    Submit =(e)=> {
     e.preventDefault();
       if(this.state.name==="" || this.state.age==="" || this.state.course==="" || this.state.location==="" || this.state.intrests===""||this.state.year===""){
+<<<<<<< HEAD
       alert("Please enter details for every field");
         return;
       }
+=======
+   // alert("ERRor");
+   //   return;
+   }
+>>>>>>> 7dfbac44eb3731cac95e0b9daaf6aefdf0d71c38
     
     var ref=fire.database().ref('User'); 
     var newRef=ref.push();
@@ -78,18 +88,62 @@ class UserSection extends Component {
       userHasSubmitted : !(this.state.userHasSubmitted)
     });
     
-      ref.on("value",function(snapshot){
+//       ref.on("value",function(snapshot){
      
-      snapshot.forEach(function(data){
-      var t={
-      Name:data.val().Name,
-      Age:data.val().Age,
-      Year:data.val().Year,
-      Course:data.val().Course,
-      Location:data.val().Location,
-      Interests:data.val().Interests
+//       snapshot.forEach(function(data){
+//       var t={
+//       Name:data.val().Name,
+//       Age:data.val().Age,
+//       Year:data.val().Year,
+//       Course:data.val().Course,
+//       Location:data.val().Location,
+//       Interests:data.val().Interests
+//       }
+    
+         
+//   });
+
+// });
+
+
+        this.setState({
+        name: "",
+        age: "",
+        course: "",
+        year: "",
+        location: "",
+        intrests: "",
+        willDisplay: true,
+        
+      });
+        document.getElementById("info").reset();//reset value after entered
+        
+    }
+    clickPopUp=(e)=>{
+      e.preventDefault();
+      this.setState({
+        willDisplay: !(this.state.willDisplay)
+      });
+     var close = document.getElementsByClassName("closebtn");//need to hide this pop up a the begining
+    
+      for (var i = 0; i < close.length; i++) {
+      // When someone clicks on a close button
+      close[i].onclick = function(){
+    
+        // Get the parent of <span class="closebtn"> 
+        var div = this.parentElement;
+    
+        // Set the opacity of div to 0 (transparent)
+        div.style.opacity = "0";
+    
+        // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+        setTimeout(function(){ div.style.display = "none"; }, 600);
       }
-     
+    }
+    
+    }
+  
+ /*
       var name=data.val();/// gets all value from firebase
       var age=t.Age;
       var course=t.Course;
@@ -144,11 +198,6 @@ class UserSection extends Component {
         
           });
 */
-         
-  });
-
-});
-
 /*Retrieve data from database to the webpage */
       /*  ref.on('value',getData,noData);
         function getData(data){
@@ -197,6 +246,7 @@ class UserSection extends Component {
           console.log(err);	
         }
         */
+<<<<<<< HEAD
         this.setState({
         name: "",
         age: "",
@@ -212,6 +262,8 @@ class UserSection extends Component {
   
 
 
+=======
+>>>>>>> 7dfbac44eb3731cac95e0b9daaf6aefdf0d71c38
 
 /*
 run=(interval, frames) =>{
@@ -227,6 +279,7 @@ var swap = window.setInterval(func, interval);
 }
 */
  
+<<<<<<< HEAD
 clickPopUp=()=>{
       
  var close = document.getElementsByClassName("closebtn");//need to hide this pop up a the begining
@@ -240,27 +293,46 @@ clickPopUp=()=>{
 
     // Set the opacity of div to 0 (transparent)
     div.style.opacity = "0";
+=======
+>>>>>>> 7dfbac44eb3731cac95e0b9daaf6aefdf0d71c38
 
-    // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
-    setTimeout(function(){ div.style.display = "none"; }, 600);
-  }
-}
-
-}
  
   render() {
     
+<<<<<<< HEAD
     return (
       
     <div >
 
     <Alert> 
+=======
+return (
+  
+ <div  >
+
+  <Alert onClick={this.Submit}>
+>>>>>>> 7dfbac44eb3731cac95e0b9daaf6aefdf0d71c38
     <span className="closebtn" onClick={this.clickPopUp}>&times;</span>
   
     <h4 className="alert-heading"><strong>Well Done!</strong></h4>
     <hr className="w3-border-black"/>
     <p>You successfully Created Your Profile.</p>
+<<<<<<< HEAD
     <h4/>
+=======
+    {this.state.willDisplay ?  <clickPopUp/> : null}
+  <h4/>
+      
+  </Alert>
+
+    <div className="container2">
+
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'></link>
+    
+    <div className="form-group col-md-10">
+    <form onSubmit={this.Submit} id="info">
+    <h3 id="header">Profile Details</h3>
+>>>>>>> 7dfbac44eb3731cac95e0b9daaf6aefdf0d71c38
         
     </Alert>
         
