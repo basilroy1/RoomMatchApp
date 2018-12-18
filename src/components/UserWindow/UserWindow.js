@@ -23,11 +23,7 @@ class UserWindow extends Component {
 
 
   render() {
-    const emailPopUp = () => 
-    <p className="email">{this.props.email}</p>
-    ;
-
-
+  
     return (
 
       <div className="wrapper">
