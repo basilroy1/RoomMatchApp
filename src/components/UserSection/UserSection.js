@@ -14,8 +14,8 @@ class UserSection extends Component {
       location: "",
       interests: "",
       year: "",
-      clickPopUp: false,
-      profilePicture: 1
+      profilePicture: 1,
+      willDisplay:false
     }
   }
   handleChange =(e) => {
@@ -33,8 +33,8 @@ class UserSection extends Component {
    Submit =(e)=> {
     e.preventDefault();
       if(this.state.name==="" || this.state.age==="" || this.state.course==="" || this.state.location==="" || this.state.intrests===""||this.state.year===""){
-    alert("ERRor");
-      return;
+   // alert("ERRor");
+   //   return;
    }
     
     var ref=fire.database().ref('User'); 
@@ -51,18 +51,62 @@ class UserSection extends Component {
     
 });
     
-      ref.on("value",function(snapshot){
+//       ref.on("value",function(snapshot){
      
-      snapshot.forEach(function(data){
-      var t={
-      Name:data.val().Name,
-      Age:data.val().Age,
-      Year:data.val().Year,
-      Course:data.val().Course,
-      Location:data.val().Location,
-      Interests:data.val().Interests
+//       snapshot.forEach(function(data){
+//       var t={
+//       Name:data.val().Name,
+//       Age:data.val().Age,
+//       Year:data.val().Year,
+//       Course:data.val().Course,
+//       Location:data.val().Location,
+//       Interests:data.val().Interests
+//       }
+    
+         
+//   });
+
+// });
+
+
+        this.setState({
+        name: "",
+        age: "",
+        course: "",
+        year: "",
+        location: "",
+        intrests: "",
+        willDisplay: true,
+        
+      });
+        document.getElementById("info").reset();//reset value after entered
+        
+    }
+    clickPopUp=(e)=>{
+      e.preventDefault();
+      this.setState({
+        willDisplay: !(this.state.willDisplay)
+      });
+     var close = document.getElementsByClassName("closebtn");//need to hide this pop up a the begining
+    
+      for (var i = 0; i < close.length; i++) {
+      // When someone clicks on a close button
+      close[i].onclick = function(){
+    
+        // Get the parent of <span class="closebtn"> 
+        var div = this.parentElement;
+    
+        // Set the opacity of div to 0 (transparent)
+        div.style.opacity = "0";
+    
+        // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+        setTimeout(function(){ div.style.display = "none"; }, 600);
       }
-     
+    }
+    
+    }
+  
+ /*
       var name=data.val();/// gets all value from firebase
       var age=t.Age;
       var course=t.Course;
@@ -117,11 +161,6 @@ class UserSection extends Component {
         
           });
 */
-         
-  });
-
-});
-
 /*Retrieve data from database to the webpage */
       /*  ref.on('value',getData,noData);
         function getData(data){
@@ -170,20 +209,6 @@ class UserSection extends Component {
           console.log(err);	
         }
         */
-        this.setState({
-        name: "",
-        age: "",
-        course: "",
-        year: "",
-        location: "",
-        intrests: ""
-      });
-        document.getElementById("info").reset();//reset value after entered
-        
-    }
-  
-
-
 
 /*
 run=(interval, frames) =>{
@@ -199,46 +224,25 @@ var swap = window.setInterval(func, interval);
 }
 */
  
-clickPopUp=(e)=>{
-  e.preventDefault();
-  this.setState({
-    clickPopUp: !(this.state.clickPopUp)
-  });
- var close = document.getElementsByClassName("closebtn");//need to hide this pop up a the begining
 
-  for (var i = 0; i < close.length; i++) {
-  // When someone clicks on a close button
-  close[i].onclick = function(){
-
-    // Get the parent of <span class="closebtn"> 
-    var div = this.parentElement;
-
-    // Set the opacity of div to 0 (transparent)
-    div.style.opacity = "0";
-
-    // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
-    setTimeout(function(){ div.style.display = "none"; }, 600);
-  }
-}
-
-}
  
   render() {
     
 return (
   
- <div >
+ <div  >
 
-  <Alert>
+  <Alert onClick={this.Submit}>
     <span className="closebtn" onClick={this.clickPopUp}>&times;</span>
    
   <h4 className="alert-heading"><strong>Well Done!</strong></h4>
    <hr className="w3-border-black"/>
     <p>You successfully Created Your Profile.</p>
+    {this.state.willDisplay ?  <clickPopUp/> : null}
   <h4/>
       
   </Alert>
-     
+
     <div className="container2">
 
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'></link>
