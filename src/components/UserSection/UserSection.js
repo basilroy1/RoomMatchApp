@@ -54,9 +54,9 @@ class UserSection extends Component {
 
    Submit =(e)=> {
     e.preventDefault();
-      if(this.state.name==="" || this.state.age==="" || this.state.course==="" || this.state.location==="" || this.state.intrests===""||this.state.year===""){
-   // alert("ERRor");
-   //   return;
+      if(this.state.name==="" || this.state.age==="" || this.state.course==="" || this.state.location==="" || this.state.intrests===""||this.state.year==="" || this.state.profilePicture===1){
+        alert("Please fill in all fields");
+          return;
    }
     
     var ref=fire.database().ref('User'); 
@@ -96,7 +96,7 @@ class UserSection extends Component {
 // });
 
 
-        this.setState({
+    this.setState({
         name: "",
         age: "",
         course: "",
@@ -259,7 +259,7 @@ return (
   
  <div  >
 
-  <Alert onClick={this.Submit}>
+  {/* <Alert onClick={this.Submit}>
     <span className="closebtn" onClick={this.clickPopUp}>&times;</span>
   
     <h4 className="alert-heading"><strong>Well Done!</strong></h4>
@@ -268,7 +268,7 @@ return (
     {this.state.willDisplay ?  <clickPopUp/> : null}
   <h4/>
       
-  </Alert>
+  </Alert> */}
         
         <div className="container2">
 
@@ -341,7 +341,6 @@ return (
       <div>
           <label htmlFor="profilePicture" style={{color:"#d8d8d8"}}>Upload a Profile Picture</label>
           <input onChange={this.handleImageUpload} className="form-control" type="file" name="profilePicture" id="profilePicture" placeholder="Upload a profle picture"/>
-          {this.state.intrests ? <span style={{color:"#66cc00"}}>That's Good!</span> :<span style={{color: "#ff0000"}}></span>}
       </div>
 
       </div>
