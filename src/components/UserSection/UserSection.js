@@ -15,7 +15,7 @@ class UserSection extends Component {
       interests: "",
       year: "",
       profilePicture: 1,
-      userHasSubmitted: false
+      willDisplay:false
     }
   }
 
@@ -54,9 +54,9 @@ class UserSection extends Component {
    Submit =(e)=> {
     e.preventDefault();
       if(this.state.name==="" || this.state.age==="" || this.state.course==="" || this.state.location==="" || this.state.intrests===""||this.state.year===""){
-      alert("Please enter details for every field");
-        return;
-      }
+    alert("ERRor");
+      return;
+   }
     
     var ref=fire.database().ref('User'); 
     var newRef=ref.push();
@@ -89,31 +89,31 @@ this.setState({
 });
         document.getElementById("info").reset();//reset value after entered
         
-    }
-   
-      
-  
-  clickPopUp=(e)=>{
-    e.preventDefault();
-  
-   var close = document.getElementsByClassName("closebtn");//need to hide this pop up a the begining
-  
-    for (var i = 0; i < close.length; i++) {
-    // When someone clicks on a close button
-    close[i].onclick = function(){
-  
-      // Get the parent of <span class="closebtn"> 
-      var div = this.parentElement;
-  
-      // Set the opacity of div to 0 (transparent)
-      div.style.opacity = "0";
-  
-      // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
-      setTimeout(function(){ div.style.display = "none"; }, 600);
-    }
   }
+    clickPopUp=(e)=>{
+      e.preventDefault();
+      this.setState({
+        willDisplay: !(this.state.willDisplay)
+      });
+     var close = document.getElementsByClassName("closebtn");//need to hide this pop up a the begining
+    
+      for (var i = 0; i < close.length; i++) {
+      // When someone clicks on a close button
+      close[i].onclick = function(){
+    
+        // Get the parent of <span class="closebtn"> 
+        var div = this.parentElement;
+    
+        // Set the opacity of div to 0 (transparent)
+        div.style.opacity = "0";
+    
+        // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+      }
+    }
+    
+    }
   
-  }
   
  /*       ref.on("value",function(snapshot){
      
@@ -231,6 +231,7 @@ Retrieve data from database to the webpage
         function noData(err){
           console.log(err);	
         }
+        
 
 run=(interval, frames) =>{
 var int = 1;
@@ -246,20 +247,24 @@ var swap = window.setInterval(func, interval);
 */
  
 
- render() {
+
  
-    return (
-      
-    <div >
- <Alert> 
+  render() {
+    
+return (
+  
+ <div  >
+
+  <Alert onClick={this.Submit}>
     <span className="closebtn" onClick={this.clickPopUp}>&times;</span>
   
     <h4 className="alert-heading"><strong>Well Done!</strong></h4>
     <hr className="w3-border-black"/>
     <p>You successfully Created Your Profile.</p>
-    <h4/>
-        
-    </Alert>
+    {this.state.willDisplay ?  <clickPopUp/> : null}
+  <h4/>
+      
+  </Alert>
         
         <div className="container2">
 
