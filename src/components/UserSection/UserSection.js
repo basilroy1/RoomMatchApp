@@ -77,23 +77,6 @@ class UserSection extends Component {
       userHasSubmitted : !(this.state.userHasSubmitted)
     });
     
-//       ref.on("value",function(snapshot){
-     
-//       snapshot.forEach(function(data){
-//       var t={
-//       Name:data.val().Name,
-//       Age:data.val().Age,
-//       Year:data.val().Year,
-//       Course:data.val().Course,
-//       Location:data.val().Location,
-//       Interests:data.val().Interests
-//       }
-    
-         
-//   });
-
-// });
-
 
 this.setState({
   name: "",
@@ -109,7 +92,7 @@ this.setState({
     }
    
       
-  }
+  
   clickPopUp=(e)=>{
     e.preventDefault();
   
@@ -132,7 +115,22 @@ this.setState({
   
   }
   
- /*
+ /*       ref.on("value",function(snapshot){
+     
+       snapshot.forEach(function(data){
+       var t={
+       Name:data.val().Name,
+       Age:data.val().Age,
+       Year:data.val().Year,
+       Course:data.val().Course,
+      Location:data.val().Location,
+       Interests:data.val().Interests
+       }
+  
+         
+   });
+
+ });
       var name=data.val();/// gets all value from firebase
       var age=t.Age;
       var course=t.Course;
@@ -154,21 +152,21 @@ this.setState({
       var s4=document.createTextNode("Location : "+b4+' ');
       var s5=document.createTextNode("Intrests : "+b5+' ');
     
-      /*r.appendChild(s);
+      r.appendChild(s);
       r.appendChild(s2);
       r.appendChild(s3);
       r.appendChild(s4);
       r.appendChild(s5);
-*/
-      /*for(var i=0;i<b.length;i++){
+
+      for(var i=0;i<b.length;i++){
         c++;
        var d= document.createTextNode(b[i]);
        r.appendChild(d);
         
       }
-      */
-     // console.log(name,age,course,location,intrests);
-/*
+      
+      console.log(name,age,course,location,intrests);
+
       var s=document.createTextNode("Name : "+name+' ');
       var s2=document.createTextNode("Age : "+age+' ');
       var s3=document.createTextNode("Course : "+course+' ');
@@ -179,16 +177,15 @@ this.setState({
       r.appendChild(s2);
       r.appendChild(s3);
       r.appendChild(s4);
-      +
       r.appendChild(s5);
-*/
-    /*  var tif=Object.keys(users).map(function(item){
+
+      var tif=Object.keys(users).map(function(item){
         return<li value={item}>{users[item]}</li>
         
           });
-*/
-/*Retrieve data from database to the webpage */
-      /*  ref.on('value',getData,noData);
+
+Retrieve data from database to the webpage 
+        ref.on('value',getData,noData);
         function getData(data){
           var INFO = document.querySelectorAll('cool');
           for(var j=0;j<INFO.length; j++){
@@ -206,7 +203,7 @@ this.setState({
         var intrests=user[k].Intrests;
         var location=user[k].Location;
         var name=user[k].Name;
-       /* 
+       
         var g=JSON.stringify(age);
         var g2=JSON.stringify(course);
         var g3=JSON.stringify(intrests);
@@ -234,12 +231,7 @@ this.setState({
         function noData(err){
           console.log(err);	
         }
-        */
-      
 
-
-
-/*
 run=(interval, frames) =>{
 var int = 1;
 
@@ -254,14 +246,12 @@ var swap = window.setInterval(func, interval);
 */
  
 
+ render() {
  
-  render() {
-    
     return (
       
     <div >
-
-    <Alert> 
+ <Alert> 
     <span className="closebtn" onClick={this.clickPopUp}>&times;</span>
   
     <h4 className="alert-heading"><strong>Well Done!</strong></h4>
@@ -356,8 +346,7 @@ var swap = window.setInterval(func, interval);
     </div>  
 
 
-        );
-        
-    }
-  
+          );        
+          }
+        }
 export default UserSection;
