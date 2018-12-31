@@ -53,7 +53,9 @@ class UserSection extends Component {
 
    Submit =(e)=> {
     e.preventDefault();
-      if(this.state.name==="" || this.state.age==="" || this.state.course==="" || this.state.location==="" || this.state.intrests===""||this.state.year==="" || this.state.profilePicture===1){
+      if(this.state.name==="" || this.state.age===""
+       || this.state.course==="" || this.state.location==="" ||
+        this.state.intrests===""||this.state.year==="" || this.state.profilePicture===1){
         alert("Please fill in all fields");
           return;
    }
@@ -258,8 +260,8 @@ var swap = window.setInterval(func, interval);
 return (
   
  <div  >
-
-  {/* <Alert onClick={this.Submit}>
+{/*
+   <Alert onClick={this.Submit}>
     <span className="closebtn" onClick={this.clickPopUp}>&times;</span>
   
     <h4 className="alert-heading"><strong>Well Done!</strong></h4>
@@ -268,8 +270,8 @@ return (
     {this.state.willDisplay ?  <clickPopUp/> : null}
   <h4/>
       
-  </Alert> */}
-        
+  </Alert> 
+        */}
         <div className="container2">
 
         <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'/>
@@ -286,33 +288,25 @@ return (
         </div>
         <div className="form-group col-md-6">
           <label htmlfor="inputAge" style={{color:"#d8d8d8"}}>Age</label>
-          <input onChange={this.handleChange} className="form-control" type="text" id="age" name="age" placeholder="Enter Age"/>
-          {this.state.age ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#881d11"}}>.</span>}
-
-        </div>
+          <input onChange={this.handleChange} className="form-control" type="number" id="age" name="age" placeholder="Enter Age"/>
+          {this.state.age ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#881d11"}}>.</span>}  </div>
       </div>
       <div className="form-group">
         <label htmlfor="inputLocation" style={{color:"#d8d8d8"}}>Location</label>
         <input onChange={this.handleChange} className="form-control" type="text" id="location" name="location" placeholder="Enter Location"/>
         {this.state.location ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#881d11"}}>.</span>}
-      </div>
-           
-        
+   </div> 
             <div className="form-group">
               <label htmlfor="inputYear" style={{color:"#d8d8d8"}}>Year</label>
               <input onChange={this.handleChange} className="form-control" type="text" id="year" name="year" placeholder="Enter College Year"/>
               {this.state.year ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#881d11"}}>.</span>}
-            </div>
-
-      
+            </div>      
       <div className="form-row">
       <div className="form-form-group col-md-6">
         <label htmlFor="inputCourse" style={{color:"#d8d8d8"}}>Course</label>
         <input onChange={this.handleChange} className="form-control" type="text" id="course" name="course" placeholder="Enter Course"/>
         {this.state.course ? <span style={{color: "#66cc00"}}>That's Good!</span> :<span style={{color: "#881d11"}}>.</span>}
-
-          </div>
-      
+          </div>      
       <div className="form-row">
         <div className="form-group col-md-6">
           <label htmlFor="inputIntrests" style={{color:"#d8d8d8"}}>Interests</label>
@@ -331,7 +325,7 @@ return (
     <button className="btn btn-primary btn-success" type="submit"id="btn"><span class="glyphicon glyphicon-floppy-disk"></span> Save </button> 
 
         </form>
-        
+
     </div>
     </div>
     </div>  
